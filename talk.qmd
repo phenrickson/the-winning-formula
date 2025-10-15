@@ -1,0 +1,121 @@
+---
+title: Data Science for Security Engineers
+subtitle: Or, There Is No Such Thing as One-Weird-Trick
+format: clean-revealjs
+# format: revealjs
+author:
+  - name: Phil Henrickson, PhD
+    affiliations: AE Business Solutions
+date: last-modified
+css: styles.css
+editor: source
+---
+
+# Context {.large-slide}
+
+## 
+
+I am often asked, 
+
+## {.large-slide}
+
+<br>
+"I don't like math, statistics, or programming.
+
+<div style="height: 28px;"></div>
+How do I be a data scientist?"
+
+## {.large-slide background-image="images/alec-baldwin.jpg" style="color: white;"}
+
+<br>
+"I don't like math, statistics, or programming.
+
+<div style="height: 28px;"></div>
+How do I be a data scientist?"
+
+## {.large-slide background-image="images/alec-baldwin.jpg"}
+
+---
+
+When someone tells me, "I want to learn about data science", I've come to realize that there are generally two different mentalities:
+
+. . .
+
+1) *I want to learn the **one-cool-trick** from an open source data science package that I can implement in my project with little to no effort that **will look impressive** to my higher ups who will have next to no idea what I'm talking about but will praise me for using something they can call **AI**.*
+
+. . .
+
+2) *Tell me where to begin on the **dark and unending path** into statistics, mathematics, and programming for the purpose of **learning from data** in order to draw uncertain inferences about data-generating processes at work in the world so that I might better **understand why things happen**.*
+
+## {.large-slide background-image="images/always-be-closing.jpg"}
+
+---
+
+When someone tells me, "I want to learn about data science", I've come to realize that there are generally two different mentalities:
+
+::: {.blur-text}
+1) *I want to learn the **one-cool-trick** from an open source data science package that I can implement in my project with little to no effort that **will look impressive** to my higher ups who will have next to no idea what I'm talking about but will praise me for using something they can call **AI**.*
+:::
+
+<div style="height: 0em;"></div>
+
+2) *Tell me where to begin on the **dark and unending path** into statistics, mathematics, and programming for the purpose of **learning from data** in order to draw uncertain inferences about data-generating processes at work in the world so that I might better **understand why things happen**.*
+
+---
+
+When someone tells me, "I want to learn about data science", I've come to realize that there are generally two different mentalities:
+
+::: {.blur-text}
+1) *I want to learn the **one-cool-trick** from an open source data science package that I can implement in my project with little to no effort that **will look impressive** to my higher ups who will have next to no idea what I'm talking about but will praise me for using something they can call **AI**.*
+:::
+
+<div style="height: 0em;"></div>
+
+::: {.highlight-blue}
+2) *Tell me where to begin on the **dark and unending path** into statistics, mathematics, and programming for the purpose of **learning from data** in order to draw uncertain inferences about data-generating processes at work in the world so that I might better **understand why things happen**.*
+:::
+
+[This is what this talk is about.]{.fragment .fade-in}
+
+---
+
+I will point you in the direction I think you should go.
+
+. . .
+
+I will recommend a basic technology stack.
+
+. . .
+
+I will list a few books to check out (and yes, some are textbooks).
+
+. . .
+
+But none of that is really important.
+
+. . .
+
+Because first, I want to tell you a story.
+
+# 1) Charles Reep and the <br> Desolation of English Football
+
+Or, the importance of research design
+
+--- 
+
+At this point, you might very reasonably be wondering:
+
+. . .
+
+How does any of this apply to to my job in Network/Security?
+
+# 2) But How Does Any of This <br> Apply to Your Job in Network/Security?
+
+. . .
+
+Hold on to your butts.
+
+# 3) Okay, So What Should I Do?
+
+
+

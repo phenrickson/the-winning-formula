@@ -1,0 +1,18 @@
+project:
+  output-dir: _output
+  type: default
+
+format:
+  revealjs:
+    theme: dark
+    transition-duration: 0ms
+    font:
+      text: "Roboto"
+      heading: "Roboto Slab"
+      code: "Fira Code"
+
+resources:
+  # Load Google Fonts
+  - https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Roboto+Slab:wght@400;600&family=Fira+Code&display=swap
+  # Load custom font styling
+  - fonts.css
