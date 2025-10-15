@@ -126,8 +126,107 @@ Or, the importance of research design
 
 ## {background-image="images/charles-reep.jpg" style="color: white;"}
 
+---
+
+In 1950, Charles Reep was an RAF officer stationed in Yatesbury, England.
+
+. . .
+
+An ardent football fan, he routinely attended nearby matches. 
+
+. . . 
+
+While attending a football match between Swindon and Bristol Rovers on March 18, he became fed up after watching attack after attack produce no goals. He decided to record every sequence in the second half. 
+
+. . .
+
+Putting pen to paper, something jumped out at him: 
 
 ---
+
+He later developed a much more elaborate system for tracking passing sequences
+
+## {background-image="images/charles-reep-notes.jpg" style="color: white;" background-size="contain"}
+
+## {background-image="images/royal-statistical-society.png" style="color: white;" background-size="contain"}
+
+---
+
+This was arguably the first-ever analytical insight into sport that led to a data-driven strategy.
+
+. . .
+
+England, the originator of the world's most popular sport, eventually embraced this approach. The long-ball became England's football orthodox.
+
+. . .
+
+And it ultimately proved to be a disaster.
+
+. . .
+
+Because Reep's insight was fundamentally wrong.
+
+---
+
+Here's the deal: 
+
+Reep noted that `~80%` of goals came from passing sequences with **three passes or less**.
+
+. . .
+
+He also observed `~90%` of all passing sequences had **three passes or less**.
+
+. . .
+
+If goals occured completely randomly with absolutely no relationship to the length of passing sequences, how many goals would we expect to occur to find in sequences of
+
+. . .
+
+But he said 80%. So, given his own premise, the data indicates that passes 
+
+---
+
+--- 
+
+Reep wanted to know when goals occur, so he looked at all of the sequences that resulted in goals. He found that goals typically occured among shorter passing sequences. 
+
+. . .
+
+. . .
+
+But there are a lot of short passing sequences in soccer that *don't* lead to goals.
+
+. . .
+
+He should have been examining *all* passing sequences and asking, when do goals occur?
+
+---
+
+In other words, Reep solved for this:
+
+. . .
+
+$$
+max_k \Pr(\text{Passes} = k \mid \text{Goal}) \text{ for all sequences of $k$ passes} \newline
+\textnormal{ie, what is the most common number of passes when a goal has been scored?}
+$$
+
+. . .
+
+instead of this:
+
+$$
+\Pr(\text{Goal} \mid \text{Passes} = k) \newline
+\textnormal{ie, what is the probability of a goal among all sequences with $k$ passes?}
+$$
+
+If he had asked this, he might y
+
+---
+
+
+---
+
 
 Why am I telling you this story?
 

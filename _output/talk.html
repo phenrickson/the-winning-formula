@@ -275,7 +275,96 @@ Phil Henrickson, PhD
 </section>
 <section class="slide level2">
 
+<p>In 1950, Charles Reep was an RAF officer stationed in Yatesbury, England.</p>
+<div class="fragment">
+<p>An ardent football fan, he routinely attended nearby matches.</p>
+</div>
+<div class="fragment">
+<p>While attending a football match between Swindon and Bristol Rovers on March 18, he became fed up after watching attack after attack produce no goals. He decided to record every sequence in the second half.</p>
+</div>
+<div class="fragment">
+<p>Putting pen to paper, something jumped out at him:</p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>He later developed a much more elaborate system for tracking passing sequences</p>
+</section>
+<section id="section-7" class="slide level2" data-background-image="images/charles-reep-notes.jpg" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-8" class="slide level2" data-background-image="images/royal-statistical-society.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>This was arguably the first-ever analytical insight into sport that led to a data-driven strategy.</p>
+<div class="fragment">
+<p>England, the originator of the world’s most popular sport, eventually embraced this approach. The long-ball became England’s football orthodox.</p>
+</div>
+<div class="fragment">
+<p>And it ultimately proved to be a disaster.</p>
+</div>
+<div class="fragment">
+<p>Because Reep’s insight was fundamentally wrong.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Here’s the deal:</p>
+<p>Reep noted that <code>~80%</code> of goals came from passing sequences with <strong>three passes or less</strong>.</p>
+<div class="fragment">
+<p>He also observed <code>~90%</code> of all passing sequences had <strong>three passes or less</strong>.</p>
+</div>
+<div class="fragment">
+<p>If goals occured completely randomly with absolutely no relationship to the length of passing sequences, how many goals would we expect to occur to find in sequences of</p>
+</div>
+<div class="fragment">
+<p>But he said 80%. So, given his own premise, the data indicates that passes</p>
+</div>
+</section>
+<section class="slide level2">
+
+</section>
+<section class="slide level2">
+
+<p>Reep wanted to know when goals occur, so he looked at all of the sequences that resulted in goals. He found that goals typically occured among shorter passing sequences.</p>
+<div class="fragment">
+<p>But there are a lot of short passing sequences in soccer that <em>don’t</em> lead to goals.</p>
+</div>
+<div class="fragment">
+<p>He should have been examining <em>all</em> passing sequences and asking, when do goals occur?</p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>In other words, Reep solved for this:</p>
+<div class="fragment">
+<p><span class="math display">\[
+max_k \Pr(\text{Passes} = k \mid \text{Goal}) \text{ for all sequences of $k$ passes} \newline
+\textnormal{ie, what is the most common number of passes when a goal has been scored?}
+\]</span></p>
+</div>
+<div class="fragment">
+<p>instead of this:</p>
+<p><span class="math display">\[
+\Pr(\text{Goal} \mid \text{Passes} = k) \newline
+\textnormal{ie, what is the probability of a goal among all sequences with $k$ passes?}
+\]</span></p>
+<p>ie, what is the probability of a goal among all sequences with <span class="math inline">\(k\)</span> passes?</p>
+<p>Reep wanted to know when goals occur, so he looked at all of the sequences that resulted in goals. He found that goals typically occured among shorter passing sequences.</p>
+</div>
+<div class="fragment">
+<p>But there are a lot of short passing sequences in soccer that <em>don’t</em> lead to goals.</p>
+</div>
+<div class="fragment">
+<p>He should have been examining <em>all</em> passing sequences and asking, when do goals occur?</p>
+<p><span class="math display">\[ Pr(\text{Goal}_{\text{Scored}})\text{ | Passes} \]</span></p>
+</div>
+<div class="fragment">
+<p>He would have found, by normalizing the data, that passing tends to lead to more goals.</p>
 <p>Why am I telling you this story?</p>
+</div>
 <div class="fragment">
 <p>Because I just spend two weeks in England/Scotland/Ireland, so there.</p>
 </div>
