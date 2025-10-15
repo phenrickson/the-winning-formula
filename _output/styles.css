@@ -35,7 +35,7 @@
 }
 
 .blur-text {
-  filter: blur(30px);      /* adjust the blur amount */
+  filter: blur(10px);      /* adjust the blur amount */
 }
 
 .reveal .highlight {

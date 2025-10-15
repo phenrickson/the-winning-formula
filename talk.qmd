@@ -47,7 +47,21 @@ When someone tells me, "I want to learn about data science", I've come to realiz
 
 2) *Tell me where to begin on the **dark and unending path** into statistics, mathematics, and programming for the purpose of **learning from data** in order to draw uncertain inferences about data-generating processes at work in the world so that I might better **understand why things happen**.*
 
-## {.large-slide background-image="images/always-be-closing.jpg"}
+## {background-image="images/data-scientist-in-six-weeks.png"}
+
+---
+
+When someone tells me, "I want to learn about data science", I've come to realize that there are generally two different mentalities:
+
+<div style="height: 0em;"></div>
+
+1) *I want to learn the **one-cool-trick** from an open source data science package that I can implement in my project with little to no effort that **will look impressive** to my higher ups who will have next to no idea what I'm talking about but will praise me for using something they can call **AI**.*
+
+. . .
+
+2) *Tell me where to begin on the **dark and unending path** into statistics, mathematics, and programming for the purpose of **learning from data** in order to draw uncertain inferences about data-generating processes at work in the world so that I might better **understand why things happen**.*
+
+## {background-image="images/always-be-closing.jpg"}
 
 ---
 
@@ -71,7 +85,7 @@ When someone tells me, "I want to learn about data science", I've come to realiz
 
 <div style="height: 0em;"></div>
 
-::: {.highlight-blue}
+::: {.bg style="--col: #FF6F40"} 
 2) *Tell me where to begin on the **dark and unending path** into statistics, mathematics, and programming for the purpose of **learning from data** in order to draw uncertain inferences about data-generating processes at work in the world so that I might better **understand why things happen**.*
 :::
 
@@ -79,7 +93,16 @@ When someone tells me, "I want to learn about data science", I've come to realiz
 
 ---
 
-I will point you in the direction I think you should go.
+To be clear, I don't believe that I can pack [semesters worth of info]{.bg style="--col: #e64173"} into twenty minutes. 
+
+. . .
+
+I think the best I can reasonably do is [spark some level of interest]{.bg style="--col: #FF6F40"} in what I do and why you might find it kind of interesting. Even if it will be hard.
+
+---
+
+
+I will point you towards some things I think you should check out.
 
 . . .
 
@@ -87,21 +110,42 @@ I will recommend a basic technology stack.
 
 . . .
 
-I will list a few books to check out (and yes, some are textbooks).
+I will list a few books to reference (and yes, some are textbooks).
 
 . . .
 
-But none of that is really important.
+But, in the end, none of that is really important.
 
 . . .
 
-Because first, I want to tell you a story.
+Because first, **I want to tell you a story**.
 
 # 1) Charles Reep and the <br> Desolation of English Football
 
 Or, the importance of research design
 
---- 
+## {background-image="images/charles-reep.jpg" style="color: white;"}
+
+
+---
+
+Why am I telling you this story?
+
+. . .
+
+Because I just spend two weeks in England/Scotland/Ireland, so there.
+
+. . .
+
+Because the single most important thing to understand about data science a mindset:
+
+. . .
+
+How could I prove myself wrong?
+
+---
+
+At 
 
 At this point, you might very reasonably be wondering:
 
