@@ -529,6 +529,19 @@ If you train a model to simply look for the presence of code in every file, you 
 
 Then Palo Alto Networks figured out that even this type of model can be easily fooled if you just inject a bunch of benign code into a file.
 
+## {background-image="images/talk/page_275.png" background-color="#14283cff" background-size="contain"}
+
+---
+
+Then Palo Alto Networks figured out that even this type of model can be easily fooled if you just inject a bunch of benign code into a file.
+
+. . .
+
+So they came up with another model.
+
+---
+
+
 
 # 3) Okay, So What Should I Do?
 
