@@ -1,19 +1,17 @@
 ---
-title: Data Science for Security Engineers
-subtitle: Or, There Is No Such Thing as One-Simple-Trick
+title: The Winning Formula
+subtitle: Or, Data Science for Security Engineers
 format: clean-revealjs
 # format: revealjs
 author:
   - name: Phil Henrickson, PhD
-    affiliations: AE Business Solutions
+    affiliations: Senior Data Scientist, AE Business Solutions
 date: last-modified
 css: styles.css
 editor: source
 ---
 
-# Context
-
-## 
+# So, You Want To Be a Data Scientist
 
 ## {.large-slide}
 
@@ -41,21 +39,19 @@ When someone tells me, "I want to learn about data science", I've come to realiz
 
 1) *I want to learn the **one-cool-trick** from an open source data science package that I can implement in my project with little to no effort that **will look impressive** to my higher ups who will have next to no idea what I'm talking about but will praise me for using something they can call **AI**.*
 
-. . .
-
-2) *Tell me where to begin on the **dark and unending path** into statistics, mathematics, and programming for the purpose of **learning from data** in order to draw uncertain inferences about data-generating processes at work in the world so that I might better **understand why things happen**.*
-
 ## {background-image="images/data-scientist-in-six-weeks.png"}
 
 ---
 
 When someone tells me, "I want to learn about data science", I've come to realize that there are generally two different mentalities:
 
-<div style="height: 0em;"></div>
-
+::: {.blur-text}
 1) *I want to learn the **one-cool-trick** from an open source data science package that I can implement in my project with little to no effort that **will look impressive** to my higher ups who will have next to no idea what I'm talking about but will praise me for using something they can call **AI**.*
+:::
 
 . . .
+
+<div style="height: 0em;"></div>
 
 2) *Tell me where to begin on the **dark and unending path** into statistics, mathematics, and programming for the purpose of **learning from data** in order to draw uncertain inferences about data-generating processes at work in the world so that I might better **understand why things happen**.*
 
@@ -71,19 +67,7 @@ When someone tells me, "I want to learn about data science", I've come to realiz
 
 <div style="height: 0em;"></div>
 
-2) *Tell me where to begin on the **dark and unending path** into statistics, mathematics, and programming for the purpose of **learning from data** in order to draw uncertain inferences about data-generating processes at work in the world so that I might better **understand why things happen**.*
-
----
-
-When someone tells me, "I want to learn about data science", I've come to realize that there are generally two different mentalities:
-
-::: {.blur-text}
-1) *I want to learn the **one-cool-trick** from an open source data science package that I can implement in my project with little to no effort that **will look impressive** to my higher ups who will have next to no idea what I'm talking about but will praise me for using something they can call **AI**.*
-:::
-
-<div style="height: 0em;"></div>
-
-::: {.bg style="--col: #FF6F40"} 
+::: {.bg style="--col: #75BAFF"}
 2) *Tell me where to begin on the **dark and unending path** into statistics, mathematics, and programming for the purpose of **learning from data** in order to draw uncertain inferences about data-generating processes at work in the world so that I might better **understand why things happen**.*
 :::
 
@@ -91,24 +75,29 @@ When someone tells me, "I want to learn about data science", I've come to realiz
 
 ---
 
-To be clear, I don't believe that I can pack [semesters worth of info]{.bg style="--col: #e64173"} into twenty minutes. 
+To be clear, I don't believe that I can pack semesters worth of info into twenty minutes. 
 
 . . .
 
-I think the best I can reasonably do is [spark some level of interest]{.bg style="--col: #FF6F40"} in what I do and why you might find it kind of interesting. Even if it will be hard.
+But, there is enough going on in the world of AI/ML for network security that it's probably worth getting a mental model for what is going on.
+
+. . .
+
+I think the best I can reasonably do is [spark some level of interest]{.bg style="--col: #75BAFF"} in this area and where you should if you want to learn more.
 
 ---
 
+## The Plan
 
-I will point you towards some resources I think you should check out.
-
-. . .
-
-I will recommend a basic technology stack.
+So, I will point you towards some [resources I think are worth checking out]{.bg style="--col: #75ff9eff"}.
 
 . . .
 
-I will list a few books I think you should read (and yes, some are textbooks).
+I will give you my recommendations for a [basic technology stack]{.bg style="--col: #75ff9eff"}.
+
+. . .
+
+I will list a [few books I think you should read]{.bg style="--col: #75ff9eff"} (and yes, some are textbooks).
 
 . . .
 
@@ -116,11 +105,11 @@ But, in the end, none of that is really important.
 
 . . .
 
-The most important thing about getting into data science is a **mentality**.
+The most important thing about to understand about [data science is a mentality]{.bg style="--col: #75BAFF"}
 
 . . .
 
-So first, **I want to tell you a story**.
+So first, [I want to tell you a story]{.bg style="--col: #75BAFF"}
 
 # 1) Charles Reep and the <br> Desolation of English Football
 
@@ -132,7 +121,7 @@ I recently took a trip to England/Scotland/Ireland and attended a football (read
 
 . . .
 
-To prepare for this, I did what anyone would do: [I read a 500 page book on the history of soccer tactics and formations.[^1]]{.fragment}
+To prepare for this, I did what anyone would do: [**I read a ~500 page book on the history of soccer tactics and formations**.[^1]]{.fragment}
 
 [^1]: I'm also trying to figure out the optimal formation to get my team out of Bronze in Rematch.
 
@@ -156,17 +145,21 @@ A devoted football fan, he had been appointed director of football teams for the
 
 . . . 
 
-While attending a football match between Swindon and Bristol Rovers on March 18, 1950, he became fed up after watching attack after attack produce no goals.  
+While attending a football match between Swindon and Bristol on March 18, 1950, he became fed up after watching **attack after attack produce no goals**.  
 
 . . .
 
-Putting pen to paper, he decided to record all 147 attacking sequences by Swindon in the second half, which produced one goal in a 1-0 victory.
+At half time, he decided to do what anyone would do: [**record on a piece of paper every attacking move by Swindon in the second half to analyze their (lack of) offensive strategy**.]{.fragment}
+
+---
+
+Charles Reap recorded **all 147 attacking sequences by Swindon** in the second half, which eventually produced **one goal** in a 1-0 Swindon victory.
 
 . . . 
 
-In other words, their rate of failure in attacking was >99%.
+Despite the victory, as Charles Reep saw it, Swindon's rate of failure in attacking was >99%.
 
----
+. . .
 
 <!-- > Reep, extrapolating this, and assuming 280 attacks per game and an average of two goals scored, realized this equated to a failure rate of 99.29 percent, which meant that **an improvement of only 0.71 percent was necessary for a side to average three goals a game.**[^2]
 
@@ -174,11 +167,7 @@ In other words, their rate of failure in attacking was >99%.
 
 . . . -->
 
-Charles Reep sought to understand how to improve a soccer team's ability to generate goals.
-
-. . .
-
-He developed increasingly elaborate (handwritten) methods for recording and analyzing the events within games.
+Motivated by this, he developed increasingly elaborate (handwritten) methods for recording and analyzing the events within soccer games.
 
 ## {background-image="images/charles-reep-notes.jpg" style="color: white;" background-size="contain"}
 
@@ -186,27 +175,42 @@ He developed increasingly elaborate (handwritten) methods for recording and anal
 
 ---
 
-Reep wanted to know **when goals occur**, so he looked at all of the sequences of passes that resulted in goals. After recording hundreds of games, he observed:
+Reep wanted to know how to improve a team's attacking strategy; he wanted to understand **when goals are most likely to occur**. 
+
+He hand-recorded data on sequences of passes from hundreds of games, eventually publishing his work and findings. 
+
+## {background-image="images/royal-statistical-society.png" style="color: white;" background-size="contain"}
+
+## {background-image="images/royal-statistical-society-table-3.png" style="color: white;" background-size="contain"}
+
+---
+
+After recording hundreds of games, he felt the data confirmed an idea he had been circling for years.
+
+He observed:
 
 . . .
 
-> Only two goals out of nine came from [sequences] which included more than three received passes.’
+> Only **two goals out of nine** came from [sequences] which included more than three received passes.’
 
 . . .
 
-Stated another way, **~80% of goals** came from passing sequences with **three passes or less**.
+Stated another way, **~80% of goals**, the vast majority, came from passing sequences with **three passes or less**.
+
 
 ## {background-image="figures/goals_distribution_uniform.png" style="color: white;" background-size="contain"}
 
 ---
 
-Reap's data collection produced what was arguably the first-ever analytical insight into sport: goals tended to occur from shorter sequences of passes.
+Reep produced what was arguably the first-ever data-driven insight into the sport of soccer: goals tended to occur on shorter sequences of passes.
 
 . . .
 
-**The key to scoring goals and winning matches**, therefore, was simple: [greduce passes and possession time in favor of getting the ball downfield as quickly as possible]{.bg style="--col: #FF6F40"}.
+> **If a team tries to play football and keeps it down to not more than three passes [per sequence]**, it will have a much higher chance of winning matches. Passing for the sake of passing can be disastrous.
 
-## {background-image="images/royal-statistical-society.png" style="color: white;" background-size="contain"}
+. . .
+
+**The key to scoring goals and winning matches**, therefore, was simple: reduce passes and possession time in favor of getting the ball downfield as quickly as possible.
 
 ---
 
@@ -216,11 +220,20 @@ The teams he oversaw at the RAF implemented his strategies and saw tremendous su
 
 Two smaller teams, Watford and Wimbledon, came to embrace his recommendations for "direct" football and managed to achieve a series of promotions.
 
-. . .
 
-Charles Reap later published his findings in the Royal Statistical Society.
+## {background-image="images/watford-forever.png" style="color: white;" background-size="contain"}
 
-## {background-image="images/royal-statistical-society.png" style="color: white;" background-size="contain"}
+## {background-image="images/london-watford-jersey.png" style="color: white;" background-size="contain"}
+
+---
+
+<!-- The teams Reep oversaw at the RAF implemented his strategies and saw tremendous success. 
+
+<div style="height: 0em;"></div>
+
+Two smaller teams, Watford and Wimbledon, came to embrace his recommendations for "direct" football and managed to achieve a series of promotions. -->
+
+Reep's strategies eventually made its way to the head of the English Football Association, where it became the leading school of thought for football development in England.
 
 ---
 
@@ -228,44 +241,52 @@ So, why am I telling you about this?
 
 . . .
 
-Charles Reep followed all of the steps I would expect you to follow in learning about data science:
+Charles Reep followed the steps that we would expect of a [data science project]{.bg style="--col: #75BAFF"}:
+
+. . .
 
 - He collected data.\
-- He found a pattern.\
-- He used this pattern to recommend a strategy.\
-- The teams that followed his strategy achieved success.
-
----
-
-England, the originator of the world's most popular sport, eventually embraced this approach. The long-ball became England's football orthodox.
+- He learned something from the data.\
+- He used what he learned to recommend a strategy.\
+- That strategy led to success.\
 
 . . .
 
-And it ultimately proved to be a disaster.
+Until it didn't. [And it eventually turned into a disaster.]{.fragment}
 
-. . .
+. . . 
 
-Because Reep's insight about soccer was fundamentally wrong.
+Because what Reep learned about soccer was [fundamentally wrong]{.bg style="--col: #f15c75ff"}.
 
 ---
 
-Reep observed that **~80%` of goals** came from passing sequences with **three passes or less**..
+## {background-image="figures/goals_distribution_actual.png" style="color: white;" background-size="contain"}
 
-But he also observed that **~90%` of all passing sequences** had **three passes or less**.
+---
+
+Reep observed that **~80% of goals** came from passing sequences with **three passes or less**.
+
+. . .
+
+But he also observed that **~90% of all passing sequences** had **three passes or less**.
+
+---
+
+## {background-image="figures/goals_percentage_actual.png" style="color: white;" background-size="contain"}
+
+---
+
+Reep observed that **~80% of goals** came from passing sequences with **three passes or less**.
+
+<div style="height: 0em;"></div>
+
+But he also observed that **~90% of all passing sequences** had **three passes or less**.
 
 . . .
 
 Meaning, there are a lot of short passing sequences in soccer that **don't** lead to goals.
 
-## {background-image="figures/goal_distribution_actual.png" style="color: white;" background-size="contain"}
-
 ---
-
-
-
-He should have been examining **all passing sequences** and asking, when do goals occur?
-
-<!-- ---
 
 In other words, Reep solved for this:
 
@@ -278,26 +299,48 @@ $$
 
 . . .
 
-instead of this:
+instead of:
 
 $$
 \Pr(\text{Goal} \mid \text{Passes} = k) \newline
 \textnormal{ie, what is the probability of a goal among all sequences with $k$ passes?}
 $$
 
---- -->
+---
 
-He would have noticed that goals are more likely to come from longer sequences of passes.
+The difference between
+$\Pr(\text{Goal} \mid \text{Passes} = k)$ and $max_k \Pr(\text{Passes} = k \mid \text{Goal})$ is like, ridiculously important.
 
-## {background-image="figures/hughes-2005.png" style="color: white;" background-size="contain"}
+He should been examining *all passing sequences* and asking, **when do goals occur?**
 
-## {background-image="figures/hughes-2005-figure.png" style="color: white;" background-size="contain"}
+. . .
+
+He would have noticed that goals are slightly more likely to come from longer sequences of passes.
+
+## {background-image="images/hughes-2005.png" style="color: white;" background-size="contain"}
+
+## {background-image="images/hughes-2005-figure.png" style="color: white;" background-size="contain"}
 
 ---
 
-So what happened? Charles Hughes embraced Reap's methods and ultimately became England's director of football in 1983.
+Modern analyses of soccer data have come to emphasize the importance of **passing** and **possession** in the pursuit of Expected Goals (xGoals).
 
-His book, *The Winning Formula*, advocated against passing and possession in favor of booting the ball upfield and shooting at the first opportunity.
+::: {layout-ncol=2}
+
+![xGoals by Team](images/premier-league-expected-goals.png)
+
+![xGoals by Player](images/premier-league-player.png)
+:::
+
+---
+
+But this, unfortunately, was not understood in the 1980s.
+
+Charles Hughes embraced Reap's methods and ultimately became England's director of football in 1983.
+
+. . .
+
+He wrote a book, **The Winning Formula**, which advocated against **passing and possession** in favor of booting the ball upfield and shooting when given the opportunity.
 
 . . .
 
@@ -307,9 +350,9 @@ These policies become the orthodox of English football and set the direction of 
 
 ## {background-image="images/charles-hughes.jpg" style="color: white;" background-size="contain"}
 
-## {background-image="images/the-winning-formula-1.png" style="color: white;" background-size="contain"}
-
 ## {background-image="images/the-winning-formula-british-aerospace.png" style="color: white;" background-size="contain"}
+
+## {background-image="images/the-winning-formula-2.png" style="color: white;" background-size="contain"}
 
 ---
 
@@ -319,86 +362,191 @@ Hughes was removed from his job in 1994 when England failed to qualify for the W
 
 England still has not won a major international tournament since 1966.
 
-
 ## {background-image="images/chargles-hughes-obituary.png" style="color: white;" background-size="contain"}
 
----
 
 ---
 
 So, why am I telling you about this?
 
----
+. . .
 
 > It is, frankly, horrifying that a philosophy founded on such basic misinterpretation of figures could have been allowed to become a cornerstone of English coaching. **Anti-intellectualism is one thing, but faith in wrong-headed pseudo intellectualism is far worse.**[^3]
+
+. . .
+
+The most important thing about to understand about [data science is a mentality]{.bg style="--col: #75BAFF"}
 
 [^3]: *Inverting the Pyramid*. 2025. Jonathan Wilson. Page 168.
 
 ---
 
-So, why am I telling you about this?
-
-. . .
-
 At this point, you might very reasonably be wondering:
 
 . . .
 
-How does any of this apply to to my job in Network/Security?
+How does any of this apply to to my job in Cybersecurity?
+
+# 2) So How Does Any of This Apply to Your Job in Cybersecurity?
+
+---
+
+Data science is a means of [learning patterns from data]{.bg style="--col: #75BAFF"}. 
+
+Our aim is to [understand]{.bg style="--col: #75BAFF"} the processes that produce the data we observe.
+
+::: {.incremental}
+
+- We collect data.\
+- We learn patterns from data.\
+- [We try to understand what those patterns mean.]{.bg style="--col: #75BAFF"}\
+- We make recommendations given our understanding.\
+- [We ask, what might we be getting wrong?]{.bg style="--col: #75BAFF"}\
+
+:::
 
 . . .
 
-
-What if I was to tell you that the same methods used to study soccer games are being used in network/security?
-
-# 2) But How Does Any of This <br> Apply to Your Job in Network/Security?
+This process is as valuable for soccer as it is for cybersecurity.
 
 ---
 
 You can throw a dart out the window and hit a vendor that is talking about their newfound capabilities with **AI**.
 
-## {background-image="images/talk/page_31.png" style="color: black;" background-size="contain"}
+## {background-image="images/talk/page_31.png" background-size="contain"}
 
-## {background-image="images/talk/page_32.png" style="color: black;" background-size="contain"}
+## {background-image="images/talk/page_32.png" background-size="contain"}
 
-## {background-image="images/talk/page_34.png" style="color: black;" background-size="contain"}
+## {background-image="images/talk/page_34.png" background-size="contain"}
 
-## {background-image="images/talk/page_35.png" style="color: black;" background-size="contain"}
-
-
----
-
-What if I was to tell you that the same methods used to study soccer games are the same techniques being labelled as AI?
+## {background-image="images/talk/page_35.png" background-size="contain"}
 
 ---
 
-What 
+You can throw a dart out the window and hit a vendor that is talking about their newfound capabilities with **AI**.
 
-## {background-image="images/talk/page_58.png" style="color: black;" background-size="contain"}
+. . .
+
+What if I was to tell you that, under the hood, all they're really doing is making use of the same techniques/models used to understand soccer (and everything else)?
+
+. . .
+
+I can make this claim, because I went and read **a bunch of patents by cybersecurity vendors**.
 
 ---
 
-Hold on to your butts.
+## {background-image="images/talk/page_58.png" background-size="contain"}
+
+## {background-image="images/talk/page_60.png" background-color="#14283cff" background-size="contain"}
+
+## {background-image="images/talk/page_63.png" background-color="#14283cff" background-size="contain"}
+
+---
+
+If you want to understand what vendors are doing when they talk about AI, all you really have to do is go to the source and [learn a bit about statistics and predictive modeling]{.bg style="--col: #75BAFF"}.
+
+. . .
+
+Cybersecurity has some common problems, like **how do you identify the presence of malware?**.
+
+---
+
+## {background-image="images/talk/page_228.png" background-color="black" background-size="contain"}
+
+## {background-image="images/talk/page_231.png" background-size="contain"}
+
+## {background-image="images/talk/page_229.png" background-color="#14283cff" background-size="contain"}
+
+## {background-image="images/talk/page_230.png" background-color="#14283cff" background-size="contain"}
+
+---
+
+How do you actually train a model for this?
+
+. . .
+
+You start where Charles Reep started.
+
+. . .
+
+You collect a bunch of data.
+
+---
+
+## {background-image="images/talk/page_240.png" background-color="#14283cff" background-size="contain"}
+
+## {background-image="images/talk/page_241.png" background-color="#14283cff" background-size="contain"}
+
+## {background-image="images/talk/page_242.png" background-size="contain"}
+
+## {background-image="images/talk/page_245.png" background-size="contain"}
+
+## {background-image="images/talk/page_246.png"  background-color="#14283cff" background-size="contain"}
+
+---
+
+- We collect data.\
+- We learn patterns from data.\
+- [We try to understand what those patterns mean.]{.bg style="--col: #75BAFF"}\
+- We make recommendations given our understanding.\
+- [We ask, what might we be getting wrong?]{.bg style="--col: #75BAFF"}\
+
+. . .
+
+You try to understand what that model learned.
+
+. . .
+
+You ask, what did this model get wrong?\
+So that you can improve the next model.
+
+
+## {background-image="images/talk/page_86.png" background-size="contain"}
+
+--- 
+
+SentinelOne basically came to the realization that malicious code was often injected in places that usually weren't checked by malware models.
+
+. . .
+
+If you train a model to simply look for the presence of code in every file, you can detect this and improve your ability to detect malware.
+
+---
+
+## {background-image="images/talk/page_255.png" background-size="contain"}
+
+## {background-image="images/talk/page_256.png" background-size="contain"}
+
+## {background-image="images/talk/page_260.png" background-size="contain"}
+
+## {background-image="images/talk/page_262.png" background-size="contain"}
+
+---
+
+## {background-image="images/talk/page_264.png" background-color="#14283cff" background-size="contain"}
+
+---
+
+Then Palo Alto Networks figured out that even this type of model can be easily fooled if you just inject a bunch of benign code into a file.
+
 
 # 3) Okay, So What Should I Do?
 
-Alright, I promised that I was going to link you to some resources.
+Alright, I promised that I was going to give you a [list of resources]{.bg style="--col: #75ff9eff"} to take on the dark and unending path into data science.
 
-## Phil's 100% Essential Path to Learning About Data Science That Definitely Won't Change Between Now and When He Presents This
-
-## Phil's 100% Essential Path to Learning About Data Science
+## Phil's 100% Guaranteed [Winning Formula for Data Science]{.bg style="--col: #75ff9eff"}
 
 0) Find a problem you **intrinsically care about**.\
 0.5) Find **real data** for that problem.\
-1) Read **the introductions** from a couple of textbooks.\
+1) Pick up a coding language that lets you get to know that data.\
+1.5) Find an IDE that you enjoy having open on your computer.
+2) Read **the introductions** from a couple of these textbooks.\
 1.5) Then **skip to sections** that seem to **match your problem**.\
-2) Start learning a coding language in order to ask questions **of your data**.\
-2.5) Find an IDE that you enjoy having open on your computer.
-3) Become familiar with the **data science workflow**.\
+3) Become familiar with the [data science workflow]{.bg style="--col: #75BAFF"}
+.\
 4) Try the **simplest possible method you can find** for your problem.
 5) Start your journey into learning `Git` now, rather than later.
 6) Have you figured out your problem? What do you have right/wrong? What could be better?
-
 ---
 
 ## Phil's 100% Essential Path to Learning About Data Science
