@@ -1,6 +1,8 @@
 project:
-  output-dir: _output
-  type: default
+  output-dir: docs
+  type: website
+  render:
+  - talk.qmd
 
 format:
   revealjs:
