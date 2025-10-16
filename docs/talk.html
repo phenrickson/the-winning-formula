@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
+
+  <meta name="author" content="Phil Henrickson, PhD">
+  <meta name="dcterms.date" content="2025-10-16">
+  <title>The Winning Formula</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-5ae9c59b2727fcd5357d4f034d95f9e0.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+</head>
+<body class="quarto-light">
+<script src="mathjax-config.js"></script>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">The Winning Formula</h1>
+  <p class="subtitle">Or, Data Science for Security Engineers</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Phil Henrickson, PhD 
+</div>
+        <p class="quarto-title-affiliation">
+            Senior Data Scientist, AE Business Solutions
+          </p>
+    </div>
+</div>
+
+  <p class="date">October 16, 2025</p>
+</section>
+<section>
+<section id="so-you-want-to-be-a-data-scientist" class="title-slide slide level1 center">
+<h1>So, You Want To Be a Data Scientist</h1>
+
+</section>
+<section id="section" class="slide level2 large-slide">
+<h2></h2>
+<p><br> “I don’t like math, statistics, or programming.</p>
+<div style="height: 28px;">
+
+</div>
+<p>How do I be a data scientist?”</p>
+</section>
+<section id="section-1" class="slide level2 large-slide" data-background-image="images/alec-baldwin.jpg" style="color: white;">
+<h2></h2>
+<p><br> “I don’t like math, statistics, or programming.</p>
+<div style="height: 28px;">
+
+</div>
+<p>How do I be a data scientist?”</p>
+</section>
+<section id="section-2" class="slide level2 large-slide" data-background-image="images/alec-baldwin.jpg">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>When someone tells me, “I want to learn about data science”, I’ve come to realize that there are generally two different mentalities:</p>
+<div class="fragment">
+<ol type="1">
+<li><em>I want to learn the <strong>one-cool-trick</strong> from an open source data science package that I can implement in my project with little to no effort that <strong>will look impressive</strong> to my higher ups who will have next to no idea what I’m talking about but will praise me for using something they can call <strong>AI</strong>.</em></li>
+</ol>
+</div>
+</section>
+<section id="section-3" class="slide level2" data-background-image="images/data-scientist-in-six-weeks.png">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>When someone tells me, “I want to learn about data science”, I’ve come to realize that there are generally two different mentalities:</p>
+<div class="blur-text">
+<ol type="1">
+<li><em>I want to learn the <strong>one-cool-trick</strong> from an open source data science package that I can implement in my project with little to no effort that <strong>will look impressive</strong> to my higher ups who will have next to no idea what I’m talking about but will praise me for using something they can call <strong>AI</strong>.</em></li>
+</ol>
+</div>
+<div class="fragment">
+<div style="height: 0em;">
+
+</div>
+<ol start="2" type="1">
+<li><em>Tell me where to begin on the <strong>dark and unending path</strong> into statistics, mathematics, and programming for the purpose of <strong>learning from data</strong> in order to draw uncertain inferences about data-generating processes at work in the world so that I might better <strong>understand why things happen</strong>.</em></li>
+</ol>
+</div>
+</section>
+<section id="section-4" class="slide level2" data-background-image="images/always-be-closing.jpg">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>When someone tells me, “I want to learn about data science”, I’ve come to realize that there are generally two different mentalities:</p>
+<div class="blur-text">
+<ol type="1">
+<li><em>I want to learn the <strong>one-cool-trick</strong> from an open source data science package that I can implement in my project with little to no effort that <strong>will look impressive</strong> to my higher ups who will have next to no idea what I’m talking about but will praise me for using something they can call <strong>AI</strong>.</em></li>
+</ol>
+</div>
+<div style="height: 0em;">
+
+</div>
+<div class="bg" style="--col: #75BAFF">
+<ol start="2" type="1">
+<li><em>Tell me where to begin on the <strong>dark and unending path</strong> into statistics, mathematics, and programming for the purpose of <strong>learning from data</strong> in order to draw uncertain inferences about data-generating processes at work in the world so that I might better <strong>understand why things happen</strong>.</em></li>
+</ol>
+</div>
+<p><span class="fragment fade-in">This is what this talk is about.</span></p>
+</section>
+<section class="slide level2">
+
+<p>To be clear, I don’t believe that I can pack semesters worth of info into twenty minutes.</p>
+<div class="fragment">
+<p>But, there is enough going on in the world of AI/ML for cybersecurity that it’s probably worth getting a mental model for what is going on.</p>
+</div>
+<div class="fragment">
+<p>I think the best I can reasonably do is <span class="bg" style="--col: #75BAFF">spark some level of interest</span> in this area and point you to some places to go if you want to learn more.</p>
+</div>
+</section>
+<section id="the-plan" class="slide level2">
+<h2>The Plan</h2>
+<p>So, I will point you towards some <span class="bg" style="--col: #75ff9eff">resources I think are worth checking out</span>.</p>
+<div class="fragment">
+<p>I will give you my recommendations for a <span class="bg" style="--col: #75ff9eff">basic technology stack</span>.</p>
+</div>
+<div class="fragment">
+<p>I will list a <span class="bg" style="--col: #75ff9eff">few books I think you should read</span> (and yes, they are textbooks).</p>
+</div>
+<div class="fragment">
+<p>But, in the end, none of that is really important.</p>
+</div>
+<div class="fragment">
+<p>The most important thing about to understand about <span class="bg" style="--col: #75BAFF">data science is a mentality</span></p>
+</div>
+<div class="fragment">
+<p>So first, I want to tell you a story.</p>
+</div>
+</section></section>
+<section>
+<section id="charles-reep-and-the-desolation-of-english-football" class="title-slide slide level1 center">
+<h1>1) Charles Reep and the <br> Desolation of English Football</h1>
+<p>Or, the importance of research design</p>
+</section>
+<section class="slide level2">
+
+<p>I recently took a trip to the UK and attended a football (read: soccer) match.</p>
+<div class="fragment">
+<p>To prepare for this, I did what anyone would do: <span class="fragment"><strong>I read a ~500 page book on the history of soccer tactics and formations</strong>.<sup>1</sup></span></p>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>I’m also trying to figure out the optimal formation to get my team out of Bronze in Rematch.</p></li></ol></aside></section>
+<section id="section-5" class="slide level2" data-background-image="images/inverting-the-pyramid.jpg" data-background-size="contain" style="color: white;">
+<h2></h2>
+</section>
+<section id="section-6" class="slide level2" data-background-image="images/london-inverting-the-pyramid.png" data-background-size="contain" style="color: white;">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>This book contained the story of the first ever data-driven insight into the sport of soccer by a man named Charles Reep.</p>
+</section>
+<section id="section-7" class="slide level2" data-background-image="images/charles-reep.jpg" style="color: white;">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>In 1950, Charles Reep was an RAF officer stationed in Bushy Park, England.</p>
+<div class="fragment">
+<p>A devoted football fan, he had been appointed director of football teams for the RAF and obsessively sought ways to improve his teams.</p>
+</div>
+<div class="fragment">
+<p>While attending a football match between Swindon and Bristol on March 18, 1950, he became fed up after watching <strong>attack after attack produce no goals</strong>.</p>
+</div>
+<div class="fragment">
+<p>At half time, he decided to do what anyone would do: <span class="fragment"><strong>record on a piece of paper every attacking move by Swindon in the second half to analyze their (lack of) offensive strategy</strong>.</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>Charles Reap recorded <strong>all 147 attacking sequences by Swindon</strong> in the second half, which eventually produced <strong>one goal</strong> in a 1-0 Swindon victory.</p>
+<div class="fragment">
+<p>Despite the victory, as Charles Reep saw it, Swindon’s rate of failure in attacking was &gt;99%.</p>
+</div>
+<div class="fragment">
+<!-- > Reep, extrapolating this, and assuming 280 attacks per game and an average of two goals scored, realized this equated to a failure rate of 99.29 percent, which meant that **an improvement of only 0.71 percent was necessary for a side to average three goals a game.**[^2]
+
+[^2]: *Inverting the Pyramid*. 2025. Jonathan Wilson. Page 166.
+
+. . . -->
+<p>Motivated by this, he developed increasingly elaborate (handwritten) methods for recording and analyzing the events within soccer games.</p>
+</div>
+</section>
+<section id="section-8" class="slide level2" data-background-image="images/charles-reep-notes.jpg" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-9" class="slide level2" data-background-image="images/charles-reep-notes-1966.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>Reep wanted to know how to improve a team’s attacking strategy; he wanted to understand <strong>when goals are most likely to occur</strong>.</p>
+<p>He hand-recorded data on sequences of passes from hundreds of games, eventually publishing his work and findings.</p>
+</section>
+<section id="section-10" class="slide level2" data-background-image="images/royal-statistical-society.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-11" class="slide level2" data-background-image="images/royal-statistical-society-table-3.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>After recording hundreds of games, he felt the data confirmed an idea he had been circling for years.</p>
+<p>He observed:</p>
+<div class="fragment">
+<blockquote>
+<p>Only <strong>two goals out of nine</strong> came from [sequences] which included more than three received passes.’</p>
+</blockquote>
+</div>
+<div class="fragment">
+<p>Stated another way, <strong>~80% of goals</strong>, the vast majority, came from passing sequences with <strong>three passes or less</strong>.</p>
+</div>
+</section>
+<section id="section-12" class="slide level2" data-background-image="figures/goals_distribution_uniform.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>Reep produced what was arguably the first-ever data-driven insight into the sport of soccer: <strong>goals tended to occur on shorter sequences of passes.</strong></p>
+<div class="fragment">
+<blockquote>
+<p><strong>If a team tries to play football and keeps it down to not more than three passes [per sequence]</strong>, it will have a much higher chance of winning matches. Passing for the sake of passing can be disastrous.</p>
+</blockquote>
+</div>
+<div class="fragment">
+<p><strong>The key to scoring goals and winning matches</strong>, therefore, was simple: reduce passes and possession time in favor of getting the ball downfield as quickly as possible.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>The teams he oversaw at the RAF implemented his strategies and saw tremendous success.</p>
+<div class="fragment">
+<p>Two smaller teams, Watford and Wimbledon, came to embrace his recommendations for “direct” football and managed to achieve a series of promotions.</p>
+</div>
+</section>
+<section id="section-13" class="slide level2" data-background-image="images/watford-forever.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-14" class="slide level2" data-background-image="images/london-watford-jersey.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<!-- The teams Reep oversaw at the RAF implemented his strategies and saw tremendous success. 
+
+<div style="height: 0em;"></div>
+
+Two smaller teams, Watford and Wimbledon, came to embrace his recommendations for "direct" football and managed to achieve a series of promotions. -->
+<p>Reep’s strategies eventually made its way to the head of the English Football Association, where it became the leading school of thought for football development in England.</p>
+</section>
+<section class="slide level2">
+
+<p>So, why am I telling you about this?</p>
+<div class="fragment">
+<p>Charles Reep followed the steps that we would expect of a <span class="bg" style="--col: #75BAFF">data science project</span>:</p>
+</div>
+<div class="fragment">
+<ul>
+<li>He collected data.<br>
+</li>
+<li>He learned something from the data.<br>
+</li>
+<li>He used what he learned to recommend a strategy.<br>
+</li>
+<li>That strategy led to success.<br>
+</li>
+</ul>
+</div>
+<div class="fragment">
+<p>Until it didn’t. <span class="fragment">And it eventually turned into a disaster.</span></p>
+</div>
+<div class="fragment">
+<p>Because what Reep learned about soccer was <span class="bg" style="--col: #f15c75ff">fundamentally wrong</span>.</p>
+</div>
+</section>
+<section id="section-15" class="slide level2" data-background-image="images/one-mans-bad-math.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-16" class="slide level2" data-background-image="figures/goals_distribution_actual.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>Reep observed that <strong>~80% of goals</strong> came from passing sequences with <strong>three passes or less</strong>.</p>
+<div class="fragment">
+<p>But he also observed that <strong>~90% of all passing sequences</strong> had <strong>three passes or less</strong>.</p>
+</div>
+</section>
+<section id="section-17" class="slide level2" data-background-image="figures/goals_percentage_actual.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>Reep observed that <strong>~80% of goals</strong> came from passing sequences with <strong>three passes or less</strong>.</p>
+<div style="height: 0em;">
+
+</div>
+<p>But he also observed that <strong>~90% of all passing sequences</strong> had <strong>three passes or less</strong>.</p>
+<p>Meaning, shorter passing sequences are actually slightly less likely to produce goals. Because <strong>there are a lot of short passing sequences in soccer that don’t lead to goals</strong>.</p>
+</section>
+<section id="section-18" class="slide level2" data-background-image="figures/goals_percentage_uniform.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>In other words, Reep solved for this:</p>
+<div class="fragment">
+<p><span class="math display">\[
+max_k \Pr(\text{Passes} = k \mid \text{Goal}) \text{ for all sequences of $k$ passes} \newline
+\textnormal{ie, what is the most common number of passes when a goal has been scored?}
+\]</span></p>
+</div>
+<div class="fragment">
+<p>instead of:</p>
+<p><span class="math display">\[
+\Pr(\text{Goal} \mid \text{Passes} = k) \newline
+\textnormal{ie, what is the probability of a goal among all sequences with $k$ passes?}
+\]</span></p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>The difference between <span class="math inline">\(\Pr(\text{Goal} \mid \text{Passes} = k)\)</span> and <span class="math inline">\(max_k \Pr(\text{Passes} = k \mid \text{Goal})\)</span> is like, ridiculously important.</p>
+<p>He should have been examining <em>all passing sequences</em> and asking, <strong>when do goals occur?</strong></p>
+<div class="fragment">
+<p>He would have noticed that goals are <strong>slightly more likely to come from longer sequences of passes</strong>.</p>
+</div>
+</section>
+<section id="section-19" class="slide level2" data-background-image="images/hughes-2005.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-20" class="slide level2" data-background-image="images/hughes-2005-figure.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>Modern analyses of soccer data have come to emphasize the importance of <strong>passing</strong> and <strong>possession</strong> in the pursuit of Expected Goals (xGoals).</p>
+</section>
+<section class="slide level2">
+
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/premier-league-expected-goals.png"></p>
+<figcaption>xGoals by Team</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/premier-league-player.png"></p>
+<figcaption>xGoals by Player</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="slide level2">
+
+<p>But this, unfortunately, was not understood in the 1980s.</p>
+<p>Charles Hughes embraced Reap’s methods and ultimately became England’s director of football in 1983.</p>
+<div class="fragment">
+<p>He wrote a book, <strong>The Winning Formula</strong>, which advocated <strong>against passing and possession</strong> in favor of long balls upfield and shooting when given the opportunity.</p>
+</div>
+<div class="fragment">
+<p>These policies become the orthodox of English football and set the direction of English football development for over a decade.</p>
+</div>
+</section>
+<section id="section-21" class="slide level2" data-background-image="images/charles-hughes.jpg" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-22" class="slide level2" data-background-image="images/the-winning-formula-2.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-23" class="slide level2" data-background-image="images/the-winning-formula-british-aerospace.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>Hughes was removed from his job in 1994 when England failed to qualify for the World Cup.</p>
+<div class="fragment">
+<p>England still has not won a major international tournament since 1966.</p>
+</div>
+</section>
+<section id="section-24" class="slide level2" data-background-image="images/chargles-hughes-obituary.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>So, why am I telling you about this?</p>
+<div class="fragment">
+<blockquote>
+<p>It is, frankly, horrifying that a philosophy founded on such basic misinterpretation of figures could have been allowed to become a cornerstone of English coaching. <strong>Anti-intellectualism is one thing, but faith in wrong-headed pseudo intellectualism is far worse.</strong><sup>1</sup></p>
+</blockquote>
+</div>
+<div class="fragment">
+<p>The most important thing about to understand about <span class="bg" style="--col: #75BAFF">data science is a mentality</span></p>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn2"><p><em>Inverting the Pyramid</em>. 2025. Jonathan Wilson. Page 168.</p></li></ol></aside></section>
+<section class="slide level2">
+
+<p>At this point, you might very reasonably be wondering:</p>
+<div class="fragment">
+<p>How does any of this apply to to my job in Cybersecurity?</p>
+</div>
+</section></section>
+<section>
+<section id="so-how-does-any-of-this-apply-to-your-job-in-cybersecurity" class="title-slide slide level1 center">
+<h1>2) So How Does Any of This Apply to Your Job in Cybersecurity?</h1>
+
+</section>
+<section class="slide level2">
+
+<p>Data science is a means of <span class="bg" style="--col: #75BAFF">learning patterns from data</span>.</p>
+<p>Our aim is to <span class="bg" style="--col: #75BAFF">understand</span> the processes that produce the data we observe.</p>
+<ul>
+<li class="fragment">We collect data.<br>
+</li>
+<li class="fragment">We learn patterns from data.<br>
+</li>
+<li class="fragment"><span class="bg" style="--col: #75BAFF">We try to understand what those patterns mean.</span><br>
+</li>
+<li class="fragment">We make recommendations given our understanding.<br>
+</li>
+<li class="fragment"><span class="bg" style="--col: #75BAFF">We ask, what might we be getting wrong?</span><br>
+</li>
+</ul>
+<div class="fragment">
+<p>A mistake at any one of these steps can produce the wrong answer.</p>
+</div>
+<div class="fragment">
+<p>This process is as valuable for soccer as it is for cybersecurity.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<p>You can throw a dart out the window and hit a vendor that is talking about their newfound capabilities with <strong>AI</strong>.</p>
+</section>
+<section id="section-25" class="slide level2" data-background-image="images/talk/page_31.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-26" class="slide level2" data-background-image="images/talk/page_32.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-27" class="slide level2" data-background-image="images/talk/page_34.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-28" class="slide level2" data-background-image="images/talk/page_35.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>You can throw a dart out the window and hit a vendor that is talking about their newfound capabilities with <strong>AI</strong>.</p>
+<p>What if I was to tell you that, under the hood, all they’re really doing is making use of the same techniques/models used to understand soccer (and everything else)?</p>
+<div class="fragment">
+<p>I can make this claim, because I went and read <strong>a bunch of patents by cybersecurity vendors</strong>.</p>
+</div>
+</section>
+<section id="section-29" class="slide level2" data-background-image="images/talk/page_58.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-30" class="slide level2" data-background-image="images/talk/page_60.png" data-background-color="#14283cff" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-31" class="slide level2" data-background-image="images/talk/page_63.png" data-background-color="#14283cff" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>If you want to understand what vendors are doing when they talk about AI, all you really have to do is go to the source and <span class="bg" style="--col: #75BAFF">learn a bit about statistics and predictive modeling</span>.</p>
+<div class="fragment">
+<p>Cybersecurity has some common problems, like <strong>how do you identify the presence of malware?</strong></p>
+</div>
+</section>
+<section id="section-32" class="slide level2" data-background-image="images/talk/page_231.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-33" class="slide level2" data-background-image="images/talk/page_230.png" data-background-color="#14283cff" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-34" class="slide level2" data-background-image="images/talk/page_229.png" data-background-color="#14283cff" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>How do you actually train a model for this?</p>
+<div class="fragment">
+<p>You start where Charles Reep started.</p>
+</div>
+<div class="fragment">
+<p>You collect a bunch of data.</p>
+</div>
+</section>
+<section id="section-35" class="slide level2" data-background-image="images/talk/page_240.png" data-background-color="#14283cff" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-36" class="slide level2" data-background-image="images/talk/page_241.png" data-background-color="#14283cff" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-37" class="slide level2" data-background-image="images/talk/page_242.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-38" class="slide level2" data-background-image="images/talk/page_245.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-39" class="slide level2" data-background-image="images/talk/page_246.png" data-background-color="#14283cff" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<ul>
+<li>We collect data.<br>
+</li>
+<li>We learn patterns from data.<br>
+</li>
+<li><span class="bg" style="--col: #75BAFF">We try to understand what those patterns mean.</span><br>
+</li>
+<li>We make recommendations given our understanding.<br>
+</li>
+<li><span class="bg" style="--col: #75BAFF">We ask, what might we be getting wrong?</span><br>
+</li>
+</ul>
+<div class="fragment">
+<p>You try to understand what that model learned.</p>
+</div>
+<div class="fragment">
+<p>You ask, what did this model get wrong? So that you can improve the next model.</p>
+</div>
+</section>
+<section id="section-40" class="slide level2" data-background-image="images/talk/page_86.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-41" class="slide level2" data-background-image="images/talk/page_255.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-42" class="slide level2" data-background-image="images/talk/page_256.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>SentinelOne basically came to the realization that malicious code was often injected in places that usually weren’t checked by malware models.</p>
+<p>If you train a model to simply look for the presence of code in every file, you can improve your to detect malware.</p>
+</section>
+<section id="section-43" class="slide level2" data-background-image="images/talk/page_260.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-44" class="slide level2" data-background-image="images/talk/page_262.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-45" class="slide level2" data-background-image="images/talk/page_264.png" data-background-color="#14283cff" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>Then Palo Alto Networks figured out that even this type of model can be easily fooled if you just inject a bunch of benign code into a file.</p>
+</section>
+<section id="section-46" class="slide level2" data-background-image="images/talk/page_275.png" data-background-color="#14283cff" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>Then Palo Alto Networks figured out that even this type of model can be easily fooled if you just inject a bunch of benign code into a file.</p>
+<div style="height: 0em;">
+
+</div>
+<p>So they came up with another model.</p>
+</section>
+<section id="section-47" class="slide level2" data-background-image="images/talk/page_297.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>Then Palo Alto Networks figured out that even this type of model can be easily fooled if you just inject a bunch of benign code into a file.</p>
+<div style="height: 0em;">
+
+</div>
+<p>So they came up with another model.</p>
+<div style="height: 0em;">
+
+</div>
+<p>Which still isn’t perfect, because the path into data science is <strong>dark and unending</strong>.</p>
+</section>
+<section class="slide level2">
+
+</section></section>
+<section>
+<section id="okay-so-what-should-i-do" class="title-slide slide level1 center">
+<h1>3) Okay, So What Should I Do?</h1>
+<p>I promised that I was going to give you a <span class="bg" style="--col: #75ff9eff">list of resources</span> to take on the dark and unending path into data science.</p>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-1" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<div class="blur-text">
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+
+<div style="height: 0em;">
+
+</div>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+
+<div style="height: 0em;">
+
+</div>
+1.5) Find an IDE that you enjoy having open on your computer.</li>
+<li>Read <strong>the introductions</strong> from a couple of these textbooks.<br>
+
+<div style="height: 0em;">
+
+</div>
+2.5) Then <strong>skip to sections</strong> that seem to <strong>match your problem</strong>.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Become familiar with the data science workflow .<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Start your journey into learning <strong>Git/GitHub</strong> now, rather than later.
+<div style="height: 0em;">
+
+</div></li>
+<li>Try the <strong>simplest possible method you can find</strong> for your problem.
+<div style="height: 0em;">
+
+</div></li>
+<li>Have you figured out your problem? What do you have right/wrong? What could be better?</li>
+</ol>
+</div>
+<p><span class="bg" style="--col: #75ff9eff">Find out for $14.99! You won’t believe how simple it is! Vendors hate him!</span></p>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-2" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-3" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+</li>
+</ol>
+</section>
+<section id="find-a-problem-you-care-about." class="slide level2">
+<h2>0) Find a problem you care about.</h2>
+<p>There’s are reason I’m constantly working on data science side projects related to board games and sports.</p>
+</section>
+<section id="section-48" class="slide level2" data-background-image="images/board-game-experiments.png" data-background-color="black" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-49" class="slide level2" data-background-image="images/cfb-predictions.png" data-background-color="white" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-4" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+0.5) Find <strong>real data</strong> for that problem.<br>
+</li>
+</ol>
+</section>
+<section id="find-real-data." class="slide level2">
+<h2>0.5 Find real data.</h2>
+<p>You will learn more from a day of working with <strong>real data</strong> for a topic you know something about than six weeks of working with canned/fake date.</p>
+</section>
+<section id="section-50" class="slide level2" data-background-image="images/bgg-data-warehouse.png" data-background-color="black" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-51" class="slide level2" data-background-image="images/board-games-pca.png" data-background-color="black" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-5" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+
+<div style="height: 0em;">
+
+</div>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+</li>
+</ol>
+</section>
+<section id="learn-a-coding-language." class="slide level2">
+<h2>0.5 Learn a coding language.</h2>
+<p>If you <em>really</em> want to be able to start learning from data, you should learn how to code.</p>
+<ul>
+<li><p><a href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a></p></li>
+<li><p>Learn <a href="https://www.python.org">Python</a> for coding + <a href="https://pola.rs/">Polars</a> for general data manipulation (it is so much better than Pandas)</p></li>
+<li><p><a href="https://r4ds.hadley.nz/">R for Data Science 2nd Edition</a></p></li>
+<li><p>Learn how to analyze data with the <a href="https://moderndive.com/">tidyverse</a></p></li>
+<li><p>Use <a href="https://code.visualstudio.com/">VSCode</a> + extensions for either/both of these languages</p></li>
+</ul>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-6" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+
+<div style="height: 0em;">
+
+</div>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+
+<div style="height: 0em;">
+
+</div>
+1.5) Find an IDE that you enjoy having open on your computer.</li>
+</ol>
+</section>
+<section id="section-52" class="slide level2" data-background-image="images/phils_workstation.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="use-an-ide" class="slide level2">
+<h2>1.5 Use an IDE</h2>
+<ul>
+<li><p>An IDE like VSCode will make your life easier when it comes to so many things, like working with databases and version control</p></li>
+<li><p>To start, storing data in local files (.parquet, .csv) is fine, but you will eventually want to be adept at working with databases</p></li>
+<li><p>Use <a href="https://duckdb.org/">DuckDB</a> if you want to set up your own local database</p></li>
+<li><p>Use <a href="https://cloud.google.com/bigquery">BigQuery</a> if you want a wildly cheap and performant cloud data warehouse</p></li>
+</ul>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-7" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+1.5) Find an IDE that you enjoy having open on your computer.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Read <strong>the introductions</strong> from a couple of these textbooks.<br>
+</li>
+</ol>
+</section>
+<section id="textbooks-are-your-friend." class="slide level2">
+<h2>2) Textbooks are your friend.</h2>
+<ul>
+<li><p><a href="https://www.statlearning.com/"><strong>An Introduction to Statistical Learning</strong></a> aka the Bible</p></li>
+<li><p><a href="https://hastie.su.domains/CASI/"><strong>Computer Age Statistical Inference</strong></a> aka the Gospel of Efron and Hastie</p></li>
+<li><p><a href="https://avehtari.github.io/ROS-Examples/">Regression and Other Stories</a></p></li>
+<li><p><a href="https://matheusfacure.github.io/python-causality-handbook/landing-page.html">Causal Inference for the Brave and True</a></p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/ISLP_cover.png"></p>
+<figcaption>The Bible</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/computer_age_statistical inference.jpg"></p>
+<figcaption>The Gospel of Efron and Hastie</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-8" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+1.5) Find an IDE that you enjoy having open on your computer.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Read <strong>the introductions</strong> from a couple of these textbooks.<br>
+2.5) Then <strong>skip to sections</strong> that seem to <strong>match your problem</strong>.<br>
+</li>
+</ol>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-9" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+1.5) Find an IDE that you enjoy having open on your computer.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Read <strong>the introductions</strong> from a couple of these textbooks.<br>
+2.5) Then <strong>skip to sections</strong> that seem to <strong>match your problem</strong>.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Become familiar with the data science workflow .<br>
+</li>
+</ol>
+</section>
+<section id="section-53" class="slide level2" data-background-image="images/cookiecutter.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="the-data-science-workflow" class="slide level2">
+<h2>3) The Data Science Workflow</h2>
+<p><a href="https://cookiecutter-data-science.drivendata.org">A guide to Data Science Workflows</a></p>
+<p>Data Science is a Directed Ayclic Graph (DAG).</p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+    %% Core Stages
+    A[Raw Data Sources] --&gt; D[Data Preparation]
+    D --&gt; E[Model Training]
+    E --&gt; F[Model Evaluation]
+    F --&gt; G[Finalized Model]
+    G --&gt; H[Predictions]
+    
+    %% Iteration Loops
+    F --&gt; |"Refine"| D
+    F --&gt; |"Retrain"| E
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>It is an iterative and ever changing process.</p>
+</section>
+<section class="slide level2">
+
+<p>Bigger projects will result in a more complicated DAG, but it should still be a DAG.</p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Raw BGG Data] --&gt; B[Feature Engineering]
+    B --&gt; C[Hurdle Model]
+    B --&gt; D[Complexity Model]
+    D --&gt; H[Predicted Complexity]
+    B --&gt; F[Rating Model]
+    B --&gt; G[Users Rated Model]
+    H --&gt; F
+    H --&gt; G
+    C --&gt; E{Game Likely Rated?}
+    E --&gt;|Yes| I[Apply Rating Predictions]
+    E --&gt;|Yes| J[Apply Users Rated Predictions]
+    F --&gt; I
+    G --&gt; J
+    I --&gt; K[Predicted Rating]
+    J --&gt; L[Predicted Users Rated]
+    H --&gt; M[Geek Rating Calculation]
+    K --&gt; M
+    L --&gt; M
+    M --&gt; N[Final Predictions]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-10" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Read <strong>the introductions</strong> from a couple of these textbooks.<br>
+2.5) Then <strong>skip to sections</strong> that seem to <strong>match your problem</strong>.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Become familiar with the data science workflow .<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Start your journey into learning <strong>Git/GitHub</strong> now, rather than later.
+<div style="height: 0em;">
+
+</div></li>
+</ol>
+</section>
+<section id="learn-how-to-use-git-by-messing-up-a-lot." class="slide level2">
+<h2>4) Learn How to Use Git (By Messing Up a Lot).</h2>
+<p>Future you will thank you if you know how to use Git/Github.</p>
+<p>Go play <a href="https://ohmygit.org">OhMyGit!</a>, an interactive game that will teach you how Git is a time machine.</p>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-11" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Read <strong>the introductions</strong> from a couple of these textbooks.<br>
+2.5) Then <strong>skip to sections</strong> that seem to <strong>match your problem</strong>.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Become familiar with the data science workflow .<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Start your journey into learning <strong>Git/GitHub</strong> now, rather than later.
+<div style="height: 0em;">
+
+</div></li>
+<li>Try the <strong>simplest possible method you can find</strong> for your problem.</li>
+</ol>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-12" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Read <strong>the introductions</strong> from a couple of these textbooks.<br>
+2.5) Then <strong>skip to sections</strong> that seem to <strong>match your problem</strong>.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Become familiar with the data science workflow .<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Start your journey into learning <strong>Git/GitHub</strong> now, rather than later.
+<div style="height: 0em;">
+
+</div></li>
+<li>Try the <strong>simplest possible method you can find</strong> for your problem.
+<div style="height: 0em;">
+
+</div></li>
+<li>Have you figured out your problem? What do you have right/wrong? What could be better?</li>
+</ol>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-13" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="7" type="1">
+<li><strong>Read</strong> books to distract your brain for a minute.</li>
+<li><strong>Read</strong> what other people have done for problems like yours.</li>
+<li><strong>Read</strong> about specific methodological areas you’re starting to find interesting or useful.</li>
+<li><strong>Read</strong> the documentation for the open-source packages that everyone uses but nobody ever bothers to read.</li>
+<li>???</li>
+</ol>
+</section>
+<section id="section-54" class="slide level2" data-background-image="images/always-be-closing.jpg">
+<h2></h2>
+</section>
+<section id="one-final-thought" class="slide level2">
+<h2>one final thought</h2>
+<p>There is no one-simple-trick; there is no winning formula; there is no tool that you can buy and start solving all of your problems.</p>
+<div class="fragment">
+<p>The value in (data) science usually doesn’t come from algorithms, tools, platforms.</p>
+</div>
+<div class="fragment">
+<p>The value in (data) science is usually from the <span class="bg" style="--col: #75BAFF">creativity/dedication/passion</span> of asking questions and <span class="bg" style="--col: #75BAFF">being willing to go to the ends of the Earth</span> in search of the answer.</p>
+</div>
+</section></section>
+<section id="thanks-for-listening" class="title-slide slide level1 center">
+<h1>thanks for listening</h1>
+
+
+</section>
+
+
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
