@@ -123,6 +123,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="talk_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="talk_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="talk_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
 <script src="mathjax-config.js"></script>
@@ -224,10 +227,10 @@ Phil Henrickson, PhD
 
 <p>To be clear, I don’t believe that I can pack semesters worth of info into twenty minutes.</p>
 <div class="fragment">
-<p>But, there is enough going on in the world of AI/ML for network security that it’s probably worth getting a mental model for what is going on.</p>
+<p>But, there is enough going on in the world of AI/ML for cybersecurity that it’s probably worth getting a mental model for what is going on.</p>
 </div>
 <div class="fragment">
-<p>I think the best I can reasonably do is <span class="bg" style="--col: #75BAFF">spark some level of interest</span> in this area and where you should if you want to learn more.</p>
+<p>I think the best I can reasonably do is <span class="bg" style="--col: #75BAFF">spark some level of interest</span> in this area and point you to some places to go if you want to learn more.</p>
 </div>
 </section>
 <section id="the-plan" class="slide level2">
@@ -237,7 +240,7 @@ Phil Henrickson, PhD
 <p>I will give you my recommendations for a <span class="bg" style="--col: #75ff9eff">basic technology stack</span>.</p>
 </div>
 <div class="fragment">
-<p>I will list a <span class="bg" style="--col: #75ff9eff">few books I think you should read</span> (and yes, some are textbooks).</p>
+<p>I will list a <span class="bg" style="--col: #75ff9eff">few books I think you should read</span> (and yes, they are textbooks).</p>
 </div>
 <div class="fragment">
 <p>But, in the end, none of that is really important.</p>
@@ -246,7 +249,7 @@ Phil Henrickson, PhD
 <p>The most important thing about to understand about <span class="bg" style="--col: #75BAFF">data science is a mentality</span></p>
 </div>
 <div class="fragment">
-<p>So first, <span class="bg" style="--col: #75BAFF">I want to tell you a story</span></p>
+<p>So first, I want to tell you a story.</p>
 </div>
 </section></section>
 <section>
@@ -256,7 +259,7 @@ Phil Henrickson, PhD
 </section>
 <section class="slide level2">
 
-<p>I recently took a trip to England/Scotland/Ireland and attended a football (read: soccer) match.</p>
+<p>I recently took a trip to the UK and attended a football (read: soccer) match.</p>
 <div class="fragment">
 <p>To prepare for this, I did what anyone would do: <span class="fragment"><strong>I read a ~500 page book on the history of soccer tactics and formations</strong>.<sup>1</sup></span></p>
 </div>
@@ -337,7 +340,7 @@ Phil Henrickson, PhD
 </section>
 <section class="slide level2">
 
-<p>Reep produced what was arguably the first-ever data-driven insight into the sport of soccer: goals tended to occur on shorter sequences of passes.</p>
+<p>Reep produced what was arguably the first-ever data-driven insight into the sport of soccer: <strong>goals tended to occur on shorter sequences of passes.</strong></p>
 <div class="fragment">
 <blockquote>
 <p><strong>If a team tries to play football and keeps it down to not more than three passes [per sequence]</strong>, it will have a much higher chance of winning matches. Passing for the sake of passing can be disastrous.</p>
@@ -394,7 +397,10 @@ Two smaller teams, Watford and Wimbledon, came to embrace his recommendations fo
 <p>Because what Reep learned about soccer was <span class="bg" style="--col: #f15c75ff">fundamentally wrong</span>.</p>
 </div>
 </section>
-<section id="section-15" class="slide level2" data-background-image="figures/goals_distribution_actual.png" style="color: white;" data-background-size="contain">
+<section id="section-15" class="slide level2" data-background-image="images/one-mans-bad-math.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-16" class="slide level2" data-background-image="figures/goals_distribution_actual.png" style="color: white;" data-background-size="contain">
 <h2></h2>
 </section>
 <section class="slide level2">
@@ -404,7 +410,7 @@ Two smaller teams, Watford and Wimbledon, came to embrace his recommendations fo
 <p>But he also observed that <strong>~90% of all passing sequences</strong> had <strong>three passes or less</strong>.</p>
 </div>
 </section>
-<section id="section-16" class="slide level2" data-background-image="figures/goals_percentage_actual.png" style="color: white;" data-background-size="contain">
+<section id="section-17" class="slide level2" data-background-image="figures/goals_percentage_actual.png" style="color: white;" data-background-size="contain">
 <h2></h2>
 </section>
 <section class="slide level2">
@@ -414,9 +420,10 @@ Two smaller teams, Watford and Wimbledon, came to embrace his recommendations fo
 
 </div>
 <p>But he also observed that <strong>~90% of all passing sequences</strong> had <strong>three passes or less</strong>.</p>
-<div class="fragment">
-<p>Meaning, there are a lot of short passing sequences in soccer that <strong>don’t</strong> lead to goals.</p>
-</div>
+<p>Meaning, shorter passing sequences are actually slightly less likely to produce goals. Because <strong>there are a lot of short passing sequences in soccer that don’t lead to goals</strong>.</p>
+</section>
+<section id="section-18" class="slide level2" data-background-image="figures/goals_percentage_uniform.png" data-background-size="contain">
+<h2></h2>
 </section>
 <section class="slide level2">
 
@@ -438,20 +445,23 @@ max_k \Pr(\text{Passes} = k \mid \text{Goal}) \text{ for all sequences of $k$ pa
 <section class="slide level2">
 
 <p>The difference between <span class="math inline">\(\Pr(\text{Goal} \mid \text{Passes} = k)\)</span> and <span class="math inline">\(max_k \Pr(\text{Passes} = k \mid \text{Goal})\)</span> is like, ridiculously important.</p>
-<p>He should been examining <em>all passing sequences</em> and asking, <strong>when do goals occur?</strong></p>
+<p>He should have been examining <em>all passing sequences</em> and asking, <strong>when do goals occur?</strong></p>
 <div class="fragment">
-<p>He would have noticed that goals are slightly more likely to come from longer sequences of passes.</p>
+<p>He would have noticed that goals are <strong>slightly more likely to come from longer sequences of passes</strong>.</p>
 </div>
 </section>
-<section id="section-17" class="slide level2" data-background-image="images/hughes-2005.png" style="color: white;" data-background-size="contain">
+<section id="section-19" class="slide level2" data-background-image="images/hughes-2005.png" style="color: white;" data-background-size="contain">
 <h2></h2>
 </section>
-<section id="section-18" class="slide level2" data-background-image="images/hughes-2005-figure.png" style="color: white;" data-background-size="contain">
+<section id="section-20" class="slide level2" data-background-image="images/hughes-2005-figure.png" style="color: white;" data-background-size="contain">
 <h2></h2>
 </section>
 <section class="slide level2">
 
 <p>Modern analyses of soccer data have come to emphasize the importance of <strong>passing</strong> and <strong>possession</strong> in the pursuit of Expected Goals (xGoals).</p>
+</section>
+<section class="slide level2">
+
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -478,19 +488,19 @@ max_k \Pr(\text{Passes} = k \mid \text{Goal}) \text{ for all sequences of $k$ pa
 <p>But this, unfortunately, was not understood in the 1980s.</p>
 <p>Charles Hughes embraced Reap’s methods and ultimately became England’s director of football in 1983.</p>
 <div class="fragment">
-<p>He wrote a book, <strong>The Winning Formula</strong>, which advocated against <strong>passing and possession</strong> in favor of booting the ball upfield and shooting when given the opportunity.</p>
+<p>He wrote a book, <strong>The Winning Formula</strong>, which advocated <strong>against passing and possession</strong> in favor of long balls upfield and shooting when given the opportunity.</p>
 </div>
 <div class="fragment">
 <p>These policies become the orthodox of English football and set the direction of English football development for over a decade.</p>
 </div>
 </section>
-<section id="section-19" class="slide level2" data-background-image="images/charles-hughes.jpg" style="color: white;" data-background-size="contain">
+<section id="section-21" class="slide level2" data-background-image="images/charles-hughes.jpg" style="color: white;" data-background-size="contain">
 <h2></h2>
 </section>
-<section id="section-20" class="slide level2" data-background-image="images/the-winning-formula-british-aerospace.png" style="color: white;" data-background-size="contain">
+<section id="section-22" class="slide level2" data-background-image="images/the-winning-formula-2.png" style="color: white;" data-background-size="contain">
 <h2></h2>
 </section>
-<section id="section-21" class="slide level2" data-background-image="images/the-winning-formula-2.png" style="color: white;" data-background-size="contain">
+<section id="section-23" class="slide level2" data-background-image="images/the-winning-formula-british-aerospace.png" style="color: white;" data-background-size="contain">
 <h2></h2>
 </section>
 <section class="slide level2">
@@ -500,7 +510,7 @@ max_k \Pr(\text{Passes} = k \mid \text{Goal}) \text{ for all sequences of $k$ pa
 <p>England still has not won a major international tournament since 1966.</p>
 </div>
 </section>
-<section id="section-22" class="slide level2" data-background-image="images/chargles-hughes-obituary.png" style="color: white;" data-background-size="contain">
+<section id="section-24" class="slide level2" data-background-image="images/chargles-hughes-obituary.png" style="color: white;" data-background-size="contain">
 <h2></h2>
 </section>
 <section class="slide level2">
@@ -544,6 +554,9 @@ max_k \Pr(\text{Passes} = k \mid \text{Goal}) \text{ for all sequences of $k$ pa
 </li>
 </ul>
 <div class="fragment">
+<p>A mistake at any one of these steps can produce the wrong answer.</p>
+</div>
+<div class="fragment">
 <p>This process is as valuable for soccer as it is for cybersecurity.</p>
 </div>
 </section>
@@ -551,35 +564,33 @@ max_k \Pr(\text{Passes} = k \mid \text{Goal}) \text{ for all sequences of $k$ pa
 
 <p>You can throw a dart out the window and hit a vendor that is talking about their newfound capabilities with <strong>AI</strong>.</p>
 </section>
-<section id="section-23" class="slide level2" data-background-image="images/talk/page_31.png" data-background-size="contain">
+<section id="section-25" class="slide level2" data-background-image="images/talk/page_31.png" data-background-size="contain">
 <h2></h2>
 </section>
-<section id="section-24" class="slide level2" data-background-image="images/talk/page_32.png" data-background-size="contain">
+<section id="section-26" class="slide level2" data-background-image="images/talk/page_32.png" data-background-size="contain">
 <h2></h2>
 </section>
-<section id="section-25" class="slide level2" data-background-image="images/talk/page_34.png" data-background-size="contain">
+<section id="section-27" class="slide level2" data-background-image="images/talk/page_34.png" data-background-size="contain">
 <h2></h2>
 </section>
-<section id="section-26" class="slide level2" data-background-image="images/talk/page_35.png" data-background-size="contain">
+<section id="section-28" class="slide level2" data-background-image="images/talk/page_35.png" data-background-size="contain">
 <h2></h2>
 </section>
 <section class="slide level2">
 
 <p>You can throw a dart out the window and hit a vendor that is talking about their newfound capabilities with <strong>AI</strong>.</p>
-<div class="fragment">
 <p>What if I was to tell you that, under the hood, all they’re really doing is making use of the same techniques/models used to understand soccer (and everything else)?</p>
-</div>
 <div class="fragment">
 <p>I can make this claim, because I went and read <strong>a bunch of patents by cybersecurity vendors</strong>.</p>
 </div>
 </section>
-<section id="section-27" class="slide level2" data-background-image="images/talk/page_58.png" data-background-size="contain">
+<section id="section-29" class="slide level2" data-background-image="images/talk/page_58.png" data-background-size="contain">
 <h2></h2>
 </section>
-<section id="section-28" class="slide level2" data-background-image="images/talk/page_60.png" data-background-color="#14283cff" data-background-size="contain">
+<section id="section-30" class="slide level2" data-background-image="images/talk/page_60.png" data-background-color="#14283cff" data-background-size="contain">
 <h2></h2>
 </section>
-<section id="section-29" class="slide level2" data-background-image="images/talk/page_63.png" data-background-color="#14283cff" data-background-size="contain">
+<section id="section-31" class="slide level2" data-background-image="images/talk/page_63.png" data-background-color="#14283cff" data-background-size="contain">
 <h2></h2>
 </section>
 <section class="slide level2">
@@ -589,16 +600,13 @@ max_k \Pr(\text{Passes} = k \mid \text{Goal}) \text{ for all sequences of $k$ pa
 <p>Cybersecurity has some common problems, like <strong>how do you identify the presence of malware?</strong>.</p>
 </div>
 </section>
-<section id="section-30" class="slide level2" data-background-image="images/talk/page_228.png" data-background-color="black" data-background-size="contain">
-<h2></h2>
-</section>
-<section id="section-31" class="slide level2" data-background-image="images/talk/page_231.png" data-background-size="contain">
-<h2></h2>
-</section>
-<section id="section-32" class="slide level2" data-background-image="images/talk/page_229.png" data-background-color="#14283cff" data-background-size="contain">
+<section id="section-32" class="slide level2" data-background-image="images/talk/page_231.png" data-background-size="contain">
 <h2></h2>
 </section>
 <section id="section-33" class="slide level2" data-background-image="images/talk/page_230.png" data-background-color="#14283cff" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-34" class="slide level2" data-background-image="images/talk/page_229.png" data-background-color="#14283cff" data-background-size="contain">
 <h2></h2>
 </section>
 <section class="slide level2">
@@ -611,19 +619,19 @@ max_k \Pr(\text{Passes} = k \mid \text{Goal}) \text{ for all sequences of $k$ pa
 <p>You collect a bunch of data.</p>
 </div>
 </section>
-<section id="section-34" class="slide level2" data-background-image="images/talk/page_240.png" data-background-color="#14283cff" data-background-size="contain">
+<section id="section-35" class="slide level2" data-background-image="images/talk/page_240.png" data-background-color="#14283cff" data-background-size="contain">
 <h2></h2>
 </section>
-<section id="section-35" class="slide level2" data-background-image="images/talk/page_241.png" data-background-color="#14283cff" data-background-size="contain">
+<section id="section-36" class="slide level2" data-background-image="images/talk/page_241.png" data-background-color="#14283cff" data-background-size="contain">
 <h2></h2>
 </section>
-<section id="section-36" class="slide level2" data-background-image="images/talk/page_242.png" data-background-size="contain">
+<section id="section-37" class="slide level2" data-background-image="images/talk/page_242.png" data-background-size="contain">
 <h2></h2>
 </section>
-<section id="section-37" class="slide level2" data-background-image="images/talk/page_245.png" data-background-size="contain">
+<section id="section-38" class="slide level2" data-background-image="images/talk/page_245.png" data-background-size="contain">
 <h2></h2>
 </section>
-<section id="section-38" class="slide level2" data-background-image="images/talk/page_246.png" data-background-color="#14283cff" data-background-size="contain">
+<section id="section-39" class="slide level2" data-background-image="images/talk/page_246.png" data-background-color="#14283cff" data-background-size="contain">
 <h2></h2>
 </section>
 <section class="slide level2">
@@ -644,106 +652,514 @@ max_k \Pr(\text{Passes} = k \mid \text{Goal}) \text{ for all sequences of $k$ pa
 <p>You try to understand what that model learned.</p>
 </div>
 <div class="fragment">
-<p>You ask, what did this model get wrong?<br>
-So that you can improve the next model.</p>
+<p>You ask, what did this model get wrong? So that you can improve the next model.</p>
 </div>
 </section>
-<section id="section-39" class="slide level2" data-background-image="images/talk/page_86.png" data-background-size="contain">
+<section id="section-40" class="slide level2" data-background-image="images/talk/page_86.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-41" class="slide level2" data-background-image="images/talk/page_255.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-42" class="slide level2" data-background-image="images/talk/page_256.png" data-background-size="contain">
 <h2></h2>
 </section>
 <section class="slide level2">
 
 <p>SentinelOne basically came to the realization that malicious code was often injected in places that usually weren’t checked by malware models.</p>
-<div class="fragment">
-<p>If you train a model to simply look for the presence of code in every file, you can detect this and improve your ability to detect malware.</p>
-</div>
+<p>If you train a model to simply look for the presence of code in every file, you can improve your to detect malware.</p>
 </section>
-<section id="section-40" class="slide level2" data-background-image="images/talk/page_255.png" data-background-size="contain">
+<section id="section-43" class="slide level2" data-background-image="images/talk/page_260.png" data-background-size="contain">
 <h2></h2>
 </section>
-<section id="section-41" class="slide level2" data-background-image="images/talk/page_256.png" data-background-size="contain">
+<section id="section-44" class="slide level2" data-background-image="images/talk/page_262.png" data-background-size="contain">
 <h2></h2>
 </section>
-<section id="section-42" class="slide level2" data-background-image="images/talk/page_260.png" data-background-size="contain">
-<h2></h2>
-</section>
-<section id="section-43" class="slide level2" data-background-image="images/talk/page_262.png" data-background-size="contain">
-<h2></h2>
-</section>
-<section id="section-44" class="slide level2" data-background-image="images/talk/page_264.png" data-background-color="#14283cff" data-background-size="contain">
+<section id="section-45" class="slide level2" data-background-image="images/talk/page_264.png" data-background-color="#14283cff" data-background-size="contain">
 <h2></h2>
 </section>
 <section class="slide level2">
 
 <p>Then Palo Alto Networks figured out that even this type of model can be easily fooled if you just inject a bunch of benign code into a file.</p>
+</section>
+<section id="section-46" class="slide level2" data-background-image="images/talk/page_275.png" data-background-color="#14283cff" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>Then Palo Alto Networks figured out that even this type of model can be easily fooled if you just inject a bunch of benign code into a file.</p>
+<div style="height: 0em;">
+
+</div>
+<p>So they came up with another model.</p>
+</section>
+<section id="section-47" class="slide level2" data-background-image="images/talk/page_297.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>Then Palo Alto Networks figured out that even this type of model can be easily fooled if you just inject a bunch of benign code into a file.</p>
+<div style="height: 0em;">
+
+</div>
+<p>So they came up with another model.</p>
+<div style="height: 0em;">
+
+</div>
+<p>Which still isn’t perfect, because the path into data science is <strong>dark and unending</strong>.</p>
+</section>
+<section class="slide level2">
+
 </section></section>
 <section>
 <section id="okay-so-what-should-i-do" class="title-slide slide level1 center">
 <h1>3) Okay, So What Should I Do?</h1>
-<p>Alright, I promised that I was going to give you a <span class="bg" style="--col: #75ff9eff">list of resources</span> to take on the dark and unending path into data science.</p>
+<p>I promised that I was going to give you a <span class="bg" style="--col: #75ff9eff">list of resources</span> to take on the dark and unending path into data science.</p>
 </section>
 <section id="phils-100-guaranteed-winning-formula-for-data-science" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-1" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<div class="blur-text">
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+
+<div style="height: 0em;">
+
+</div>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+
+<div style="height: 0em;">
+
+</div>
+1.5) Find an IDE that you enjoy having open on your computer.</li>
+<li>Read <strong>the introductions</strong> from a couple of these textbooks.<br>
+
+<div style="height: 0em;">
+
+</div>
+2.5) Then <strong>skip to sections</strong> that seem to <strong>match your problem</strong>.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Become familiar with the data science workflow .<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Start your journey into learning <strong>Git/GitHub</strong> now, rather than later.
+<div style="height: 0em;">
+
+</div></li>
+<li>Try the <strong>simplest possible method you can find</strong> for your problem.
+<div style="height: 0em;">
+
+</div></li>
+<li>Have you figured out your problem? What do you have right/wrong? What could be better?</li>
+</ol>
+</div>
+<p><span class="bg" style="--col: #75ff9eff">Find out for $14.99! You won’t believe how simple it is! Vendors hate him!</span></p>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-2" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-3" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+</li>
+</ol>
+</section>
+<section id="find-a-problem-you-care-about." class="slide level2">
+<h2>0) Find a problem you care about.</h2>
+<p>There’s are reason I’m constantly working on data science side projects related to board games and sports.</p>
+</section>
+<section id="section-48" class="slide level2" data-background-image="images/board-game-experiments.png" data-background-color="black" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-49" class="slide level2" data-background-image="images/cfb-predictions.png" data-background-color="white" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-4" class="slide level2">
 <h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
 <ol start="0" type="1">
 <li>Find a problem you <strong>intrinsically care about</strong>.<br>
 0.5) Find <strong>real data</strong> for that problem.<br>
 </li>
-<li>Pick up a coding language that lets you get to know that data.<br>
-1.5) Find an IDE that you enjoy having open on your computer.</li>
-<li>Read <strong>the introductions</strong> from a couple of these textbooks.<br>
-1.5) Then <strong>skip to sections</strong> that seem to <strong>match your problem</strong>.<br>
-</li>
-<li>Become familiar with the <span class="bg" style="--col: #75BAFF">data science workflow</span> .<br>
-</li>
-<li>Try the <strong>simplest possible method you can find</strong> for your problem.</li>
-<li>Start your journey into learning <code>Git</code> now, rather than later.</li>
-<li><h2 id="have-you-figured-out-your-problem-what-do-you-have-rightwrong-what-could-be-better">Have you figured out your problem? What do you have right/wrong? What could be better?</h2></li>
 </ol>
 </section>
-<section id="phils-100-essential-path-to-learning-about-data-science" class="slide level2">
-<h2>Phil’s 100% Essential Path to Learning About Data Science</h2>
+<section id="find-real-data." class="slide level2">
+<h2>0.5 Find real data.</h2>
+<p>You will learn more from a day of working with <strong>real data</strong> for a topic you know something about than six weeks of working with canned/fake date.</p>
+</section>
+<section id="section-50" class="slide level2" data-background-image="images/bgg-data-warehouse.png" data-background-color="black" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-51" class="slide level2" data-background-image="images/board-games-unsupervised.png" data-background-color="black" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-5" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+
+<div style="height: 0em;">
+
+</div>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+</li>
+</ol>
+</section>
+<section id="learn-a-coding-language." class="slide level2">
+<h2>0.5 Learn a coding language.</h2>
+<p>If you <em>really</em> want to be able to start learning from data, you should learn how to code.</p>
+<ul>
+<li><p><a href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a></p></li>
+<li><p>Learn <a href="https://www.python.org">Python</a> for coding + <a href="https://pola.rs/">Polars</a> for general data manipulation (it is so much better than Pandas)</p></li>
+<li><p><a href="https://r4ds.hadley.nz/">R for Data Science 2nd Edition</a></p></li>
+<li><p>Learn how to analyze data with the <a href="https://moderndive.com/">tidyverse</a></p></li>
+<li><p>Use <a href="https://code.visualstudio.com/">VSCode</a> + extensions for either/both of these languages</p></li>
+</ul>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-6" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+
+<div style="height: 0em;">
+
+</div>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+
+<div style="height: 0em;">
+
+</div>
+1.5) Find an IDE that you enjoy having open on your computer.</li>
+</ol>
+</section>
+<section id="section-52" class="slide level2" data-background-image="images/phils_workstation.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="use-an-ide" class="slide level2">
+<h2>1.5 Use an IDE</h2>
+<ul>
+<li><p>An IDE like VSCode will make your life easier when it comes to so many things, like working with databases and version control</p></li>
+<li><p>To start, storing data in local files (.parquet, .csv) is fine, but you will eventually want to be adept at working with databases</p></li>
+<li><p>Use <a href="https://duckdb.org/">DuckDB</a> if you want to set up your own local database</p></li>
+<li><p>Use <a href="https://cloud.google.com/bigquery">BigQuery</a> if you want a wildly cheap and performant cloud data warehouse</p></li>
+</ul>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-7" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
 <ol start="0" type="1">
 <li>Find a problem you <strong>intrinsically care about</strong>.<br>
 0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+1.5) Find an IDE that you enjoy having open on your computer.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Read <strong>the introductions</strong> from a couple of these textbooks.<br>
 </li>
-<li>Read <strong>the introductions</strong> from a couple of textbooks.<br>
-1.5) Then <strong>skip to sections</strong> that seem to <strong>match your problem</strong>.<br>
-</li>
-<li>Start learning a coding language in order to ask questions <strong>of your data</strong>.<br>
-2.5) Find an IDE that you enjoy having open on your computer.</li>
-<li>Become familiar with the <strong>data science workflow</strong>.<br>
-</li>
-<li>Try the <strong>simplest possible method you can find</strong> for your problem.</li>
-<li>Start your journey into learning <code>Git</code> now, rather than later.</li>
-<li>Have you figured out your problem? What do you have right/wrong?</li>
-<li>What could be better?</li>
 </ol>
+</section>
+<section id="textbooks-are-your-friend." class="slide level2">
+<h2>2) Textbooks are your friend.</h2>
+<ul>
+<li><p><a href="https://www.statlearning.com/"><strong>An Introduction to Statistical Learning</strong></a> aka the Bible</p></li>
+<li><p><a href="https://hastie.su.domains/CASI/"><strong>Computer Age Statistical Inference</strong></a> aka the Gospel of Efron and Hastie</p></li>
+<li><p><a href="https://avehtari.github.io/ROS-Examples/">Regression and Other Stories</a></p></li>
+<li><p><a href="https://matheusfacure.github.io/python-causality-handbook/landing-page.html">Causal Inference for the Brave and True</a></p></li>
+</ul>
 </section>
 <section class="slide level2">
 
-<ol start="8" type="1">
-<li><strong>Read</strong> these books to distract your brain for a minute.</li>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/ISLP_cover.png"></p>
+<figcaption>The Bible</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/computer_age_statistical%20inference.jpg"></p>
+<figcaption>The Gospel of Efron and Hastie</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-8" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+1.5) Find an IDE that you enjoy having open on your computer.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Read <strong>the introductions</strong> from a couple of these textbooks.<br>
+2.5) Then <strong>skip to sections</strong> that seem to <strong>match your problem</strong>.<br>
+</li>
+</ol>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-9" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+1.5) Find an IDE that you enjoy having open on your computer.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Read <strong>the introductions</strong> from a couple of these textbooks.<br>
+2.5) Then <strong>skip to sections</strong> that seem to <strong>match your problem</strong>.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Become familiar with the data science workflow .<br>
+</li>
+</ol>
+</section>
+<section id="section-53" class="slide level2" data-background-image="images/cookiecutter.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="the-data-science-workflow" class="slide level2">
+<h2>3) The Data Science Workflow</h2>
+<p><a href="https://cookiecutter-data-science.drivendata.org">A guide to Data Science Workflows</a></p>
+<p>Data Science is a Directed Ayclic Graph (DAG).</p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph LR
+    %% Core Stages
+    A[Raw Data Sources] --&gt; D[Data Preparation]
+    D --&gt; E[Model Training]
+    E --&gt; F[Model Evaluation]
+    F --&gt; G[Finalized Model]
+    G --&gt; H[Predictions]
+    
+    %% Iteration Loops
+    F --&gt; |"Refine"| D
+    F --&gt; |"Retrain"| E
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>It is an iterative and ever changing process.</p>
+</section>
+<section class="slide level2">
+
+<p>Bigger projects will result in a more complicated DAG, but it should still be a DAG.</p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[Raw BGG Data] --&gt; B[Feature Engineering]
+    B --&gt; C[Hurdle Model]
+    B --&gt; D[Complexity Model]
+    D --&gt; H[Predicted Complexity]
+    B --&gt; F[Rating Model]
+    B --&gt; G[Users Rated Model]
+    H --&gt; F
+    H --&gt; G
+    C --&gt; E{Game Likely Rated?}
+    E --&gt;|Yes| I[Apply Rating Predictions]
+    E --&gt;|Yes| J[Apply Users Rated Predictions]
+    F --&gt; I
+    G --&gt; J
+    I --&gt; K[Predicted Rating]
+    J --&gt; L[Predicted Users Rated]
+    H --&gt; M[Geek Rating Calculation]
+    K --&gt; M
+    L --&gt; M
+    M --&gt; N[Final Predictions]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-10" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Read <strong>the introductions</strong> from a couple of these textbooks.<br>
+2.5) Then <strong>skip to sections</strong> that seem to <strong>match your problem</strong>.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Become familiar with the data science workflow .<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Start your journey into learning <strong>Git/GitHub</strong> now, rather than later.
+<div style="height: 0em;">
+
+</div></li>
+</ol>
+</section>
+<section id="learn-how-to-use-git-by-messing-up-a-lot." class="slide level2">
+<h2>4) Learn How to Use Git (By Messing Up a Lot).</h2>
+<p>Future you will thank you if you know how to use Git/Github.</p>
+<p>Go play <a href="https://ohmygit.org">OhMyGit!</a>, an interactive game that will teach you how Git is a time machine.</p>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-11" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Read <strong>the introductions</strong> from a couple of these textbooks.<br>
+2.5) Then <strong>skip to sections</strong> that seem to <strong>match your problem</strong>.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Become familiar with the data science workflow .<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Start your journey into learning <strong>Git/GitHub</strong> now, rather than later.
+<div style="height: 0em;">
+
+</div></li>
+<li>Try the <strong>simplest possible method you can find</strong> for your problem.</li>
+</ol>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-12" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+0.5) Find <strong>real data</strong> for that problem.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Pick up a coding language that lets you get to know that data.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Read <strong>the introductions</strong> from a couple of these textbooks.<br>
+2.5) Then <strong>skip to sections</strong> that seem to <strong>match your problem</strong>.<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Become familiar with the data science workflow .<br>
+
+<div style="height: 0em;">
+
+</div></li>
+<li>Start your journey into learning <strong>Git/GitHub</strong> now, rather than later.
+<div style="height: 0em;">
+
+</div></li>
+<li>Try the <strong>simplest possible method you can find</strong> for your problem.
+<div style="height: 0em;">
+
+</div></li>
+<li>Have you figured out your problem? What do you have right/wrong? What could be better?</li>
+</ol>
+</section>
+<section id="phils-100-guaranteed-winning-formula-for-data-science-13" class="slide level2">
+<h2>Phil’s 100% Guaranteed <span class="bg" style="--col: #75ff9eff">Winning Formula for Data Science</span></h2>
+<ol start="7" type="1">
+<li><strong>Read</strong> books to distract your brain for a minute.</li>
 <li><strong>Read</strong> what other people have done for problems like yours.</li>
 <li><strong>Read</strong> about specific methodological areas you’re starting to find interesting or useful.</li>
 <li><strong>Read</strong> the documentation for the open-source packages that everyone uses but nobody ever bothers to read.</li>
 <li>???</li>
-<li>Profit</li>
 </ol>
 </section>
-<section class="slide level2">
-
-<p>Look it pains me to say this, but <img data-src="https://www.python.org/static/community_logos/python-logo.png" width="200"></p>
-<p>I am writing some text, and here is the Python logo inline <img data-src="https://www.python.org/static/community_logos/python-logo.png" width="20" alt="Python"> continuing the paragraph right after it.</p>
-<p>For my own work setup, I use <code>VSCode</code> with extensions for interacting with data</p>
-<p>There is no one-simple-trick; there is no tool that you can buy and start solving all of your problems.</p>
+<section id="section-54" class="slide level2" data-background-image="images/always-be-closing.jpg">
+<h2></h2>
+</section>
+<section id="one-final-thought" class="slide level2">
+<h2>one final thought</h2>
+<p>There is no one-simple-trick; there is no winning formula; there is no tool that you can buy and start solving all of your problems.</p>
 <div class="fragment">
 <p>The value in (data) science usually doesn’t come from algorithms, tools, platforms.</p>
 </div>
 <div class="fragment">
-<p>The value in (data) science is usually from the <span class="fg" style="--col: #75BAFF">creativity/dedication/passion</span> of asking questions and being willing to go to the ends of the earth in search of the answer.</p>
-
+<p>The value in (data) science is usually from the <span class="bg" style="--col: #75BAFF">creativity/dedication/passion</span> of asking questions and <span class="bg" style="--col: #75BAFF">being willing to go to the ends of the Earth</span> in search of the answer.</p>
 </div>
 </section></section>
+<section id="thanks-for-listening" class="title-slide slide level1 center">
+<h1>thanks for listening</h1>
+
+</section>
+
 
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

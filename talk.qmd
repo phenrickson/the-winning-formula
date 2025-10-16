@@ -79,11 +79,11 @@ To be clear, I don't believe that I can pack semesters worth of info into twenty
 
 . . .
 
-But, there is enough going on in the world of AI/ML for network security that it's probably worth getting a mental model for what is going on.
+But, there is enough going on in the world of AI/ML for cybersecurity that it's probably worth getting a mental model for what is going on.
 
 . . .
 
-I think the best I can reasonably do is [spark some level of interest]{.bg style="--col: #75BAFF"} in this area and where you should if you want to learn more.
+I think the best I can reasonably do is [spark some level of interest]{.bg style="--col: #75BAFF"} in this area and point you to some places to go if you want to learn more.
 
 ---
 
@@ -97,7 +97,7 @@ I will give you my recommendations for a [basic technology stack]{.bg style="--c
 
 . . .
 
-I will list a [few books I think you should read]{.bg style="--col: #75ff9eff"} (and yes, some are textbooks).
+I will list a [few books I think you should read]{.bg style="--col: #75ff9eff"} (and yes, they are textbooks).
 
 . . .
 
@@ -109,7 +109,7 @@ The most important thing about to understand about [data science is a mentality]
 
 . . .
 
-So first, [I want to tell you a story]{.bg style="--col: #75BAFF"}
+So first, I want to tell you a story.
 
 # 1) Charles Reep and the <br> Desolation of English Football
 
@@ -117,7 +117,7 @@ Or, the importance of research design
 
 ---
 
-I recently took a trip to England/Scotland/Ireland and attended a football (read: soccer) match.
+I recently took a trip to the UK and attended a football (read: soccer) match.
 
 . . .
 
@@ -202,7 +202,7 @@ Stated another way, **~80% of goals**, the vast majority, came from passing sequ
 
 ---
 
-Reep produced what was arguably the first-ever data-driven insight into the sport of soccer: goals tended to occur on shorter sequences of passes.
+Reep produced what was arguably the first-ever data-driven insight into the sport of soccer: **goals tended to occur on shorter sequences of passes.**
 
 . . .
 
@@ -260,6 +260,8 @@ Because what Reep learned about soccer was [fundamentally wrong]{.bg style="--co
 
 ---
 
+## {background-image="images/one-mans-bad-math.png" style="color: white;" background-size="contain"}
+
 ## {background-image="figures/goals_distribution_actual.png" style="color: white;" background-size="contain"}
 
 ---
@@ -282,9 +284,11 @@ Reep observed that **~80% of goals** came from passing sequences with **three pa
 
 But he also observed that **~90% of all passing sequences** had **three passes or less**.
 
-. . .
+Meaning, shorter passing sequences are actually slightly less likely to produce goals. Because **there are a lot of short passing sequences in soccer that don't lead to goals**. 
 
-Meaning, there are a lot of short passing sequences in soccer that **don't** lead to goals.
+---
+
+## {background-image="figures/goals_percentage_uniform.png" background-size="contain"}
 
 ---
 
@@ -311,11 +315,11 @@ $$
 The difference between
 $\Pr(\text{Goal} \mid \text{Passes} = k)$ and $max_k \Pr(\text{Passes} = k \mid \text{Goal})$ is like, ridiculously important.
 
-He should been examining *all passing sequences* and asking, **when do goals occur?**
+He should have been examining *all passing sequences* and asking, **when do goals occur?**
 
 . . .
 
-He would have noticed that goals are slightly more likely to come from longer sequences of passes.
+He would have noticed that goals are **slightly more likely to come from longer sequences of passes**.
 
 ## {background-image="images/hughes-2005.png" style="color: white;" background-size="contain"}
 
@@ -324,6 +328,8 @@ He would have noticed that goals are slightly more likely to come from longer se
 ---
 
 Modern analyses of soccer data have come to emphasize the importance of **passing** and **possession** in the pursuit of Expected Goals (xGoals).
+
+---
 
 ::: {layout-ncol=2}
 
@@ -340,7 +346,7 @@ Charles Hughes embraced Reap's methods and ultimately became England's director 
 
 . . .
 
-He wrote a book, **The Winning Formula**, which advocated against **passing and possession** in favor of booting the ball upfield and shooting when given the opportunity.
+He wrote a book, **The Winning Formula**, which advocated **against passing and possession** in favor of long balls upfield and shooting when given the opportunity.
 
 . . .
 
@@ -350,9 +356,9 @@ These policies become the orthodox of English football and set the direction of 
 
 ## {background-image="images/charles-hughes.jpg" style="color: white;" background-size="contain"}
 
-## {background-image="images/the-winning-formula-british-aerospace.png" style="color: white;" background-size="contain"}
-
 ## {background-image="images/the-winning-formula-2.png" style="color: white;" background-size="contain"}
+
+## {background-image="images/the-winning-formula-british-aerospace.png" style="color: white;" background-size="contain"}
 
 ---
 
@@ -407,6 +413,10 @@ Our aim is to [understand]{.bg style="--col: #75BAFF"} the processes that produc
 
 . . .
 
+A mistake at any one of these steps can produce the wrong answer.
+
+. . .
+
 This process is as valuable for soccer as it is for cybersecurity.
 
 ---
@@ -424,8 +434,6 @@ You can throw a dart out the window and hit a vendor that is talking about their
 ---
 
 You can throw a dart out the window and hit a vendor that is talking about their newfound capabilities with **AI**.
-
-. . .
 
 What if I was to tell you that, under the hood, all they're really doing is making use of the same techniques/models used to understand soccer (and everything else)?
 
@@ -451,13 +459,13 @@ Cybersecurity has some common problems, like **how do you identify the presence 
 
 ---
 
-## {background-image="images/talk/page_228.png" background-color="black" background-size="contain"}
-
 ## {background-image="images/talk/page_231.png" background-size="contain"}
+
+## {background-image="images/talk/page_230.png" background-color="#14283cff" background-size="contain"}
 
 ## {background-image="images/talk/page_229.png" background-color="#14283cff" background-size="contain"}
 
-## {background-image="images/talk/page_230.png" background-color="#14283cff" background-size="contain"}
+
 
 ---
 
@@ -497,25 +505,23 @@ You try to understand what that model learned.
 
 . . .
 
-You ask, what did this model get wrong?\
-So that you can improve the next model.
+You ask, what did this model get wrong? So that you can improve the next model.
 
 
 ## {background-image="images/talk/page_86.png" background-size="contain"}
+
+## {background-image="images/talk/page_255.png" background-size="contain"}
+
+## {background-image="images/talk/page_256.png" background-size="contain"}
 
 --- 
 
 SentinelOne basically came to the realization that malicious code was often injected in places that usually weren't checked by malware models.
 
-. . .
-
-If you train a model to simply look for the presence of code in every file, you can detect this and improve your ability to detect malware.
+If you train a model to simply look for the presence of code in every file, you can improve your to detect malware.
 
 ---
 
-## {background-image="images/talk/page_255.png" background-size="contain"}
-
-## {background-image="images/talk/page_256.png" background-size="contain"}
 
 ## {background-image="images/talk/page_260.png" background-size="contain"}
 
@@ -535,68 +541,320 @@ Then Palo Alto Networks figured out that even this type of model can be easily f
 
 Then Palo Alto Networks figured out that even this type of model can be easily fooled if you just inject a bunch of benign code into a file.
 
-. . .
+<div style="height: 0em;"></div>
 
 So they came up with another model.
 
 ---
 
+## {background-image="images/talk/page_297.png" background-size="contain"}
+
+---
+
+Then Palo Alto Networks figured out that even this type of model can be easily fooled if you just inject a bunch of benign code into a file.
+
+<div style="height: 0em;"></div>
+
+So they came up with another model.
+
+<div style="height: 0em;"></div>
+
+Which still isn't perfect, because the path into data science is **dark and unending**.
+
+---
 
 
 # 3) Okay, So What Should I Do?
 
-Alright, I promised that I was going to give you a [list of resources]{.bg style="--col: #75ff9eff"} to take on the dark and unending path into data science.
+I promised that I was going to give you a [list of resources]{.bg style="--col: #75ff9eff"} to take on the dark and unending path into data science.
+
+## Phil's 100% Guaranteed [Winning Formula for Data Science]{.bg style="--col: #75ff9eff"}
+
+
+## Phil's 100% Guaranteed [Winning Formula for Data Science]{.bg style="--col: #75ff9eff"}
+
+::: {.blur-text}
+0) Find a problem you **intrinsically care about**.\
+<div style="height: 0em;"></div>
+0.5) Find **real data** for that problem.\
+<div style="height: 0em;"></div>
+1) Pick up a coding language that lets you get to know that data.\
+<div style="height: 0em;"></div>
+1.5) Find an IDE that you enjoy having open on your computer.
+2) Read **the introductions** from a couple of these textbooks.\
+<div style="height: 0em;"></div>
+2.5) Then **skip to sections** that seem to **match your problem**.\
+<div style="height: 0em;"></div>
+3) Become familiar with the data science workflow
+.\
+<div style="height: 0em;"></div>
+4) Start your journey into learning **Git/GitHub** now, rather than later.
+<div style="height: 0em;"></div>
+5) Try the **simplest possible method you can find** for your problem.
+<div style="height: 0em;"></div>
+6) Have you figured out your problem? What do you have right/wrong? What could be better?
+:::
+
+[Find out for $14.99! You won't believe how simple it is! Vendors hate him!]{.bg style="--col: #75ff9eff"}
+
+## Phil's 100% Guaranteed [Winning Formula for Data Science]{.bg style="--col: #75ff9eff"}
+
+## Phil's 100% Guaranteed [Winning Formula for Data Science]{.bg style="--col: #75ff9eff"}
+0) Find a problem you **intrinsically care about**.\
+
+---
+
+## 0) Find a problem you care about.
+
+There's are reason I'm constantly working on data science side projects related to board games and sports.
+
+## {background-image="images/board-game-experiments.png" background-color="black" background-size="contain"}
+
+## {background-image="images/cfb-predictions.png" background-color="white" background-size="contain"}
+
+## Phil's 100% Guaranteed [Winning Formula for Data Science]{.bg style="--col: #75ff9eff"}
+0) Find a problem you **intrinsically care about**.\
+0.5) Find **real data** for that problem.\
+
+## 0.5 Find real data.
+
+You will learn more from a day of working with **real data** for a topic you know something about than six weeks of working with canned/fake date.
+
+## {background-image="images/bgg-data-warehouse.png" background-color="black" background-size="contain"}
+
+## {background-image="images/board-games-unsupervised.png" background-color="black" background-size="contain"}
+
+
+---
+
+## Phil's 100% Guaranteed [Winning Formula for Data Science]{.bg style="--col: #75ff9eff"}
+
+0) Find a problem you **intrinsically care about**.\
+<div style="height: 0em;"></div>
+0.5) Find **real data** for that problem.\
+<div style="height: 0em;"></div>
+1) Pick up a coding language that lets you get to know that data.\
+
+---
+
+## 0.5 Learn a coding language.
+
+If you *really* want to be able to start learning from data, you should learn how to code.
+
+- [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
+- Learn [Python](https://www.python.org) for coding + [Polars](https://pola.rs/) for general data manipulation (it is so much better than Pandas)
+
+- [R for Data Science 2nd Edition](https://r4ds.hadley.nz/)
+- Learn how to analyze data with the [tidyverse](https://moderndive.com/)
+
+- Use [VSCode](https://code.visualstudio.com/) + extensions for either/both of these languages
+
+## Phil's 100% Guaranteed [Winning Formula for Data Science]{.bg style="--col: #75ff9eff"}
+
+0) Find a problem you **intrinsically care about**.\
+<div style="height: 0em;"></div>
+0.5) Find **real data** for that problem.\
+<div style="height: 0em;"></div>
+1) Pick up a coding language that lets you get to know that data.\
+<div style="height: 0em;"></div>
+1.5) Find an IDE that you enjoy having open on your computer.
+
+---
+
+## {background-image="images/phils_workstation.png" background-size="contain"}
+
+## 1.5 Use an IDE
+
+- An IDE like VSCode will make your life easier when it comes to so many things, like working with databases and version control
+
+- To start, storing data in local files (.parquet, .csv) is fine, but you will eventually want to be adept at working with databases
+
+- Use [DuckDB](https://duckdb.org/) if you want to set up your own local database
+
+- Use [BigQuery](https://cloud.google.com/bigquery) if you want a wildly cheap and performant cloud data warehouse
+
+---
 
 ## Phil's 100% Guaranteed [Winning Formula for Data Science]{.bg style="--col: #75ff9eff"}
 
 0) Find a problem you **intrinsically care about**.\
 0.5) Find **real data** for that problem.\
+<div style="height: 0em;"></div>
 1) Pick up a coding language that lets you get to know that data.\
-1.5) Find an IDE that you enjoy having open on your computer.
+1.5) Find an IDE that you enjoy having open on your computer.\
+<div style="height: 0em;"></div>
 2) Read **the introductions** from a couple of these textbooks.\
-1.5) Then **skip to sections** that seem to **match your problem**.\
-3) Become familiar with the [data science workflow]{.bg style="--col: #75BAFF"}
-.\
-4) Try the **simplest possible method you can find** for your problem.
-5) Start your journey into learning `Git` now, rather than later.
-6) Have you figured out your problem? What do you have right/wrong? What could be better?
+
+## 2) Textbooks are your friend.
+
+- [**An Introduction to Statistical Learning**](https://www.statlearning.com/) aka the Bible
+
+- [**Computer Age Statistical Inference**](https://hastie.su.domains/CASI/) aka the Gospel of Efron and Hastie
+
+- [Regression and Other Stories](https://avehtari.github.io/ROS-Examples/)
+
+- [Causal Inference for the Brave and True](https://matheusfacure.github.io/python-causality-handbook/landing-page.html)
+
 ---
 
-## Phil's 100% Essential Path to Learning About Data Science
+::: {layout-ncol=2}
+
+![The Bible](images/ISLP_cover.png)
+
+![The Gospel of Efron and Hastie](images/computer_age_statistical inference.jpg)
+:::
+
+## Phil's 100% Guaranteed [Winning Formula for Data Science]{.bg style="--col: #75ff9eff"}
 
 0) Find a problem you **intrinsically care about**.\
 0.5) Find **real data** for that problem.\
-1) Read **the introductions** from a couple of textbooks.\
-1.5) Then **skip to sections** that seem to **match your problem**.\
-2) Start learning a coding language in order to ask questions **of your data**.\
-2.5) Find an IDE that you enjoy having open on your computer.
-3) Become familiar with the **data science workflow**.\
-4) Try the **simplest possible method you can find** for your problem.
-5) Start your journey into learning `Git` now, rather than later.
-6) Have you figured out your problem? What do you have right/wrong? 
-7) What could be better?
+<div style="height: 0em;"></div>
+1) Pick up a coding language that lets you get to know that data.\
+1.5) Find an IDE that you enjoy having open on your computer.\
+<div style="height: 0em;"></div>
+2) Read **the introductions** from a couple of these textbooks.\
+2.5) Then **skip to sections** that seem to **match your problem**.\
+
+## Phil's 100% Guaranteed [Winning Formula for Data Science]{.bg style="--col: #75ff9eff"}
+
+0) Find a problem you **intrinsically care about**.\
+0.5) Find **real data** for that problem.\
+<div style="height: 0em;"></div>
+1) Pick up a coding language that lets you get to know that data.\
+1.5) Find an IDE that you enjoy having open on your computer.\
+<div style="height: 0em;"></div>
+2) Read **the introductions** from a couple of these textbooks.\
+2.5) Then **skip to sections** that seem to **match your problem**.\
+<div style="height: 0em;"></div>
+3) Become familiar with the data science workflow
+.\
+
+## {background-image="images/cookiecutter.png" background-size="contain"}
+
+## 3) The Data Science Workflow
+
+[A guide to Data Science Workflows](https://cookiecutter-data-science.drivendata.org)
+
+Data Science is a Directed Ayclic Graph (DAG).
+
+```{mermaid}
+graph LR
+    %% Core Stages
+    A[Raw Data Sources] --> D[Data Preparation]
+    D --> E[Model Training]
+    E --> F[Model Evaluation]
+    F --> G[Finalized Model]
+    G --> H[Predictions]
+    
+    %% Iteration Loops
+    F --> |"Refine"| D
+    F --> |"Retrain"| E
+```
+
+It is an iterative and ever changing process.
 
 ---
 
-8) **Read** these books to distract your brain for a minute.
-9) **Read** what other people have done for problems like yours.
-10) **Read** about specific methodological areas you're starting to find interesting or useful.
-11) **Read** the documentation for the open-source packages that everyone uses but nobody ever bothers to read.
-12) ???
-13) Profit
+Bigger projects will result in a more complicated DAG, but it should still be a DAG.
+
+```{mermaid}
+flowchart LR
+    A[Raw BGG Data] --> B[Feature Engineering]
+    B --> C[Hurdle Model]
+    B --> D[Complexity Model]
+    D --> H[Predicted Complexity]
+    B --> F[Rating Model]
+    B --> G[Users Rated Model]
+    H --> F
+    H --> G
+    C --> E{Game Likely Rated?}
+    E -->|Yes| I[Apply Rating Predictions]
+    E -->|Yes| J[Apply Users Rated Predictions]
+    F --> I
+    G --> J
+    I --> K[Predicted Rating]
+    J --> L[Predicted Users Rated]
+    H --> M[Geek Rating Calculation]
+    K --> M
+    L --> M
+    M --> N[Final Predictions]
+```
+
+## Phil's 100% Guaranteed [Winning Formula for Data Science]{.bg style="--col: #75ff9eff"}
+
+0) Find a problem you **intrinsically care about**.\
+0.5) Find **real data** for that problem.\
+<div style="height: 0em;"></div>
+1) Pick up a coding language that lets you get to know that data.\
+<div style="height: 0em;"></div>
+2) Read **the introductions** from a couple of these textbooks.\
+2.5) Then **skip to sections** that seem to **match your problem**.\
+<div style="height: 0em;"></div>
+3) Become familiar with the data science workflow
+.\
+<div style="height: 0em;"></div>
+4) Start your journey into learning **Git/GitHub** now, rather than later.
+<div style="height: 0em;"></div>
 
 ---
 
-Look it pains me to say this, but ![](https://www.python.org/static/community_logos/python-logo.png){width=200px}
+## 4) Learn How to Use Git (By Messing Up a Lot).
 
-I am writing some text, and here is the Python logo inline 
-![Python](https://www.python.org/static/community_logos/python-logo.png){width=20px} 
-continuing the paragraph right after it.
+Future you will thank you if you know how to use Git/Github.
+
+Go play [OhMyGit!](https://ohmygit.org), an interactive game that will teach you how Git is a time machine.
+
+## Phil's 100% Guaranteed [Winning Formula for Data Science]{.bg style="--col: #75ff9eff"}
+
+0) Find a problem you **intrinsically care about**.\
+0.5) Find **real data** for that problem.\
+<div style="height: 0em;"></div>
+1) Pick up a coding language that lets you get to know that data.\
+<div style="height: 0em;"></div>
+2) Read **the introductions** from a couple of these textbooks.\
+2.5) Then **skip to sections** that seem to **match your problem**.\
+<div style="height: 0em;"></div>
+3) Become familiar with the data science workflow
+.\
+<div style="height: 0em;"></div>
+4) Start your journey into learning **Git/GitHub** now, rather than later.
+<div style="height: 0em;"></div>
+5) Try the **simplest possible method you can find** for your problem.
 
 
-For my own work setup, I use `VSCode` with extensions for interacting with data
+## Phil's 100% Guaranteed [Winning Formula for Data Science]{.bg style="--col: #75ff9eff"}
 
-There is no one-simple-trick; there is no tool that you can buy and start solving all of your problems.
+0) Find a problem you **intrinsically care about**.\
+0.5) Find **real data** for that problem.\
+<div style="height: 0em;"></div>
+1) Pick up a coding language that lets you get to know that data.\
+<div style="height: 0em;"></div>
+2) Read **the introductions** from a couple of these textbooks.\
+2.5) Then **skip to sections** that seem to **match your problem**.\
+<div style="height: 0em;"></div>
+3) Become familiar with the data science workflow
+.\
+<div style="height: 0em;"></div>
+4) Start your journey into learning **Git/GitHub** now, rather than later.
+<div style="height: 0em;"></div>
+5) Try the **simplest possible method you can find** for your problem.
+<div style="height: 0em;"></div>
+6) Have you figured out your problem? What do you have right/wrong? What could be better?
+
+## Phil's 100% Guaranteed [Winning Formula for Data Science]{.bg style="--col: #75ff9eff"}
+
+7) **Read** books to distract your brain for a minute.
+8) **Read** what other people have done for problems like yours.
+9) **Read** about specific methodological areas you're starting to find interesting or useful.
+10) **Read** the documentation for the open-source packages that everyone uses but nobody ever bothers to read.
+11) ???
+
+## {background-image="images/always-be-closing.jpg"}
+
+
+## one final thought
+
+There is no one-simple-trick; there is no winning formula; there is no tool that you can buy and start solving all of your problems.
 
 . . .
 
@@ -604,4 +862,6 @@ The value in (data) science usually doesn't come from algorithms, tools, platfor
 
 . . .
 
-The value in (data) science is usually from the [creativity/dedication/passion]{.fg style="--col: #75BAFF"} of asking questions and being willing to go to the ends of the earth in search of the answer.
+The value in (data) science is usually from the [creativity/dedication/passion]{.bg style="--col: #75BAFF"} of asking questions and [being willing to go to the ends of the Earth]{.bg style="--col: #75BAFF"} in search of the answer.
+
+# thanks for listening
