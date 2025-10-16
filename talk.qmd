@@ -455,7 +455,7 @@ If you want to understand what vendors are doing when they talk about AI, all yo
 
 . . .
 
-Cybersecurity has some common problems, like **how do you identify the presence of malware?**.
+Cybersecurity has some common problems, like **how do you identify the presence of malware?**
 
 ---
 
@@ -622,7 +622,7 @@ You will learn more from a day of working with **real data** for a topic you kno
 
 ## {background-image="images/bgg-data-warehouse.png" background-color="black" background-size="contain"}
 
-## {background-image="images/board-games-unsupervised.png" background-color="black" background-size="contain"}
+## {background-image="images/board-games-pca.png" background-color="black" background-size="contain"}
 
 
 ---

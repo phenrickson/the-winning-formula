@@ -128,9 +128,10 @@
 
 <section class="slide level2">
 
-<p>graph LR A[Raw Data] –&gt; |“Clean &amp; Transform”| B[Prepared Data] B –&gt; |“Train”| C[Model] C –&gt; |“Apply”| D[Results]</p>
-<pre><code>%% Essential Loop
-C --&gt; |"Iterate"| B</code></pre>
+<p>graph LR %% Core Stages A[Raw Data Sources] –&gt; D[Data Preparation] D –&gt; E[Model Training] E –&gt; F[Model Evaluation] F –&gt; G[Finalized Model] G –&gt; H[Predictions]</p>
+<pre><code>%% Iteration Loops
+F --&gt; |"Refine"| D
+F --&gt; |"Retrain"| E</code></pre>
 
 </section>
     </div>
