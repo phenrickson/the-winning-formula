@@ -1,6 +1,6 @@
 ---
 title: Data Science for Security Engineers
-subtitle: Or, There Is No Such Thing as One-Weird-Trick
+subtitle: Or, There Is No Such Thing as One-Simple-Trick
 format: clean-revealjs
 # format: revealjs
 author:
@@ -11,11 +11,9 @@ css: styles.css
 editor: source
 ---
 
-# Context {.large-slide}
+# Context
 
 ## 
-
-I am often asked, 
 
 ## {.large-slide}
 
@@ -102,7 +100,7 @@ I think the best I can reasonably do is [spark some level of interest]{.bg style
 ---
 
 
-I will point you towards some things I think you should check out.
+I will point you towards some resources I think you should check out.
 
 . . .
 
@@ -110,7 +108,7 @@ I will recommend a basic technology stack.
 
 . . .
 
-I will list a few books to reference (and yes, some are textbooks).
+I will list a few books I think you should read (and yes, some are textbooks).
 
 . . .
 
@@ -118,43 +116,126 @@ But, in the end, none of that is really important.
 
 . . .
 
-Because first, **I want to tell you a story**.
+The most important thing about getting into data science is a **mentality**.
+
+. . .
+
+So first, **I want to tell you a story**.
 
 # 1) Charles Reep and the <br> Desolation of English Football
 
 Or, the importance of research design
 
+---
+
+I recently took a trip to England/Scotland/Ireland and attended a football (read: soccer) match.
+
+. . .
+
+To prepare for this, I did what anyone would do: [I read a 500 page book on the history of soccer tactics and formations.[^1]]{.fragment}
+
+[^1]: I'm also trying to figure out the optimal formation to get my team out of Bronze in Rematch.
+
+## {background-image="images/inverting-the-pyramid.jpg"  background-size="contain" style="color: white;"}
+
+## {background-image="images/london-inverting-the-pyramid.png" background-size="contain" style="color: white;"}
+
+--- 
+
+This book contained the story of the first ever data-driven insight into the sport of soccer by a man named Charles Reep.
+
 ## {background-image="images/charles-reep.jpg" style="color: white;"}
 
 ---
 
-In 1950, Charles Reep was an RAF officer stationed in Yatesbury, England.
+In 1950, Charles Reep was an RAF officer stationed in Bushy Park, England.
 
 . . .
 
-An ardent football fan, he routinely attended nearby matches. 
+A devoted football fan, he had been appointed director of football teams for the RAF and obsessively sought ways to improve his teams.
 
 . . . 
 
-While attending a football match between Swindon and Bristol Rovers on March 18, he became fed up after watching attack after attack produce no goals. He decided to record every sequence in the second half. 
+While attending a football match between Swindon and Bristol Rovers on March 18, 1950, he became fed up after watching attack after attack produce no goals.  
 
 . . .
 
-Putting pen to paper, something jumped out at him: 
+Putting pen to paper, he decided to record all 147 attacking sequences by Swindon in the second half, which produced one goal in a 1-0 victory.
+
+. . . 
+
+In other words, their rate of failure in attacking was >99%.
 
 ---
 
-He later developed a much more elaborate system for tracking passing sequences
+<!-- > Reep, extrapolating this, and assuming 280 attacks per game and an average of two goals scored, realized this equated to a failure rate of 99.29 percent, which meant that **an improvement of only 0.71 percent was necessary for a side to average three goals a game.**[^2]
+
+[^2]: *Inverting the Pyramid*. 2025. Jonathan Wilson. Page 166.
+
+. . . -->
+
+Charles Reep sought to understand how to improve a soccer team's ability to generate goals.
+
+. . .
+
+He developed increasingly elaborate (handwritten) methods for recording and analyzing the events within games.
 
 ## {background-image="images/charles-reep-notes.jpg" style="color: white;" background-size="contain"}
+
+## {background-image="images/charles-reep-notes-1966.png" style="color: white;" background-size="contain"}
+
+---
+
+Reep wanted to know **when goals occur**, so he looked at all of the sequences of passes that resulted in goals. After recording hundreds of games, he observed:
+
+. . .
+
+> Only two goals out of nine came from [sequences] which included more than three received passes.’
+
+. . .
+
+Stated another way, **~80% of goals** came from passing sequences with **three passes or less**.
+
+## {background-image="figures/goals_distribution_uniform.png" style="color: white;" background-size="contain"}
+
+---
+
+Reap's data collection produced what was arguably the first-ever analytical insight into sport: goals tended to occur from shorter sequences of passes.
+
+. . .
+
+**The key to scoring goals and winning matches**, therefore, was simple: [greduce passes and possession time in favor of getting the ball downfield as quickly as possible]{.bg style="--col: #FF6F40"}.
 
 ## {background-image="images/royal-statistical-society.png" style="color: white;" background-size="contain"}
 
 ---
 
-This was arguably the first-ever analytical insight into sport that led to a data-driven strategy.
+The teams he oversaw at the RAF implemented his strategies and saw tremendous success. 
 
 . . .
+
+Two smaller teams, Watford and Wimbledon, came to embrace his recommendations for "direct" football and managed to achieve a series of promotions.
+
+. . .
+
+Charles Reap later published his findings in the Royal Statistical Society.
+
+## {background-image="images/royal-statistical-society.png" style="color: white;" background-size="contain"}
+
+---
+
+So, why am I telling you about this? 
+
+. . .
+
+Charles Reep followed all of the steps I would expect you to follow in learning about data science:
+
+- He collected data.\
+- He found a pattern.\
+- He used this pattern to recommend a strategy.\
+- The teams that followed his strategy achieved success.
+
+---
 
 England, the originator of the world's most popular sport, eventually embraced this approach. The long-ball became England's football orthodox.
 
@@ -164,43 +245,27 @@ And it ultimately proved to be a disaster.
 
 . . .
 
-Because Reep's insight was fundamentally wrong.
+Because Reep's insight about soccer was fundamentally wrong.
 
 ---
 
-Here's the deal: 
+Reep observed that **~80%` of goals** came from passing sequences with **three passes or less**..
 
-Reep noted that `~80%` of goals came from passing sequences with **three passes or less**.
-
-. . .
-
-He also observed `~90%` of all passing sequences had **three passes or less**.
+But he also observed that **~90%` of all passing sequences** had **three passes or less**.
 
 . . .
 
-If goals occured completely randomly with absolutely no relationship to the length of passing sequences, how many goals would we expect to occur to find in sequences of
+Meaning, there are a lot of short passing sequences in soccer that **don't** lead to goals.
 
-. . .
-
-But he said 80%. So, given his own premise, the data indicates that passes 
+## {background-image="figures/goal_distribution_actual.png" style="color: white;" background-size="contain"}
 
 ---
 
---- 
 
-Reep wanted to know when goals occur, so he looked at all of the sequences that resulted in goals. He found that goals typically occured among shorter passing sequences. 
 
-. . .
+He should have been examining **all passing sequences** and asking, when do goals occur?
 
-. . .
-
-But there are a lot of short passing sequences in soccer that *don't* lead to goals.
-
-. . .
-
-He should have been examining *all* passing sequences and asking, when do goals occur?
-
----
+<!-- ---
 
 In other words, Reep solved for this:
 
@@ -220,31 +285,52 @@ $$
 \textnormal{ie, what is the probability of a goal among all sequences with $k$ passes?}
 $$
 
-If he had asked this, he might y
+--- -->
+
+He would have noticed that goals are more likely to come from longer sequences of passes.
+
+## {background-image="figures/hughes-2005.png" style="color: white;" background-size="contain"}
+
+## {background-image="figures/hughes-2005-figure.png" style="color: white;" background-size="contain"}
 
 ---
 
+So what happened? Charles Hughes embraced Reap's methods and ultimately became England's director of football in 1983.
+
+His book, *The Winning Formula*, advocated against passing and possession in favor of booting the ball upfield and shooting at the first opportunity.
+
+. . .
+
+These policies become the orthodox of English football and set the direction of English football development for over a decade.
 
 ---
 
+## {background-image="images/charles-hughes.jpg" style="color: white;" background-size="contain"}
 
-Why am I telling you this story?
+## {background-image="images/the-winning-formula-1.png" style="color: white;" background-size="contain"}
 
-. . .
-
-Because I just spend two weeks in England/Scotland/Ireland, so there.
-
-. . .
-
-Because the single most important thing to understand about data science a mindset:
-
-. . .
-
-How could I prove myself wrong?
+## {background-image="images/the-winning-formula-british-aerospace.png" style="color: white;" background-size="contain"}
 
 ---
 
-At 
+Hughes was removed from his job in 1994 when England failed to qualify for the World Cup. 
+
+. . .
+
+England still has not won a major international tournament since 1966.
+
+## {background-image="images/chargles-hughes-obituary.png" style="color: white;" background-size="contain"}
+
+---
+
+> It is, frankly, horrifying that a philosophy founded on such basic misinterpretation of figures could have been allowed to become a cornerstone of English coaching. **Anti-intellectualism is one thing, but faith in wrong-headed pseudo intellectualism is far worse.**[^3]
+
+[^3]: *Inverting the Pyramid*. 2025. Jonathan Wilson. Page 168.
+
+
+So, why am I telling you about this?
+
+. . .
 
 At this point, you might very reasonably be wondering:
 
@@ -252,13 +338,101 @@ At this point, you might very reasonably be wondering:
 
 How does any of this apply to to my job in Network/Security?
 
+. . .
+
+
+What if I was to tell you that the same methods used to study soccer games are being used in network/security?
+
 # 2) But How Does Any of This <br> Apply to Your Job in Network/Security?
 
-. . .
+---
+
+You can throw a dart out the window and hit a vendor that is talking about their newfound capabilities with **AI**.
+
+## {background-image="images/talk/page_31.png" style="color: black;" background-size="contain"}
+
+## {background-image="images/talk/page_32.png" style="color: black;" background-size="contain"}
+
+## {background-image="images/talk/page_34.png" style="color: black;" background-size="contain"}
+
+## {background-image="images/talk/page_35.png" style="color: black;" background-size="contain"}
+
+
+---
+
+What if I was to tell you that the same methods used to study soccer games are the same techniques being labelled as AI?
+
+---
+
+What 
+
+## {background-image="images/talk/page_58.png" style="color: black;" background-size="contain"}
+
+---
 
 Hold on to your butts.
 
 # 3) Okay, So What Should I Do?
 
+Alright, I promised that I was going to link you to some resources.
+
+## Phil's 100% Essential Path to Learning About Data Science That Definitely Won't Change Between Now and When He Presents This
+
+## Phil's 100% Essential Path to Learning About Data Science
+
+0) Find a problem you **intrinsically care about**.\
+0.5) Find **real data** for that problem.\
+1) Read **the introductions** from a couple of textbooks.\
+1.5) Then **skip to sections** that seem to **match your problem**.\
+2) Start learning a coding language in order to ask questions **of your data**.\
+2.5) Find an IDE that you enjoy having open on your computer.
+3) Become familiar with the **data science workflow**.\
+4) Try the **simplest possible method you can find** for your problem.
+5) Start your journey into learning `Git` now, rather than later.
+6) Have you figured out your problem? What do you have right/wrong? What could be better?
+
+---
+
+## Phil's 100% Essential Path to Learning About Data Science
+
+0) Find a problem you **intrinsically care about**.\
+0.5) Find **real data** for that problem.\
+1) Read **the introductions** from a couple of textbooks.\
+1.5) Then **skip to sections** that seem to **match your problem**.\
+2) Start learning a coding language in order to ask questions **of your data**.\
+2.5) Find an IDE that you enjoy having open on your computer.
+3) Become familiar with the **data science workflow**.\
+4) Try the **simplest possible method you can find** for your problem.
+5) Start your journey into learning `Git` now, rather than later.
+6) Have you figured out your problem? What do you have right/wrong? 
+7) What could be better?
+
+---
+
+8) **Read** these books to distract your brain for a minute.
+9) **Read** what other people have done for problems like yours.
+10) **Read** about specific methodological areas you're starting to find interesting or useful.
+11) **Read** the documentation for the open-source packages that everyone uses but nobody ever bothers to read.
+12) ???
+13) Profit
+
+---
+
+Look it pains me to say this, but ![](https://www.python.org/static/community_logos/python-logo.png){width=200px}
+
+I am writing some text, and here is the Python logo inline 
+![Python](https://www.python.org/static/community_logos/python-logo.png){width=20px} 
+continuing the paragraph right after it.
 
 
+For my own work setup, I use `VSCode` with extensions for interacting with data
+
+There is no one-simple-trick; there is no tool that you can buy and start solving all of your problems.
+
+. . .
+
+The value in (data) science usually doesn't come from algorithms, tools, platforms.
+
+. . .
+
+The value in (data) science is usually from the [creativity/dedication/passion]{.fg style="--col: #75BAFF"} of asking questions and being willing to go to the ends of the earth in search of the answer.

@@ -131,7 +131,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Data Science for Security Engineers</h1>
-  <p class="subtitle">Or, There Is No Such Thing as One-Weird-Trick</p>
+  <p class="subtitle">Or, There Is No Such Thing as One-Simple-Trick</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -147,13 +147,12 @@ Phil Henrickson, PhD
   <p class="date">October 15, 2025</p>
 </section>
 <section>
-<section id="context" class="title-slide slide level1 large-slide center">
+<section id="context" class="title-slide slide level1 center">
 <h1>Context</h1>
 
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
-<p>I am often asked,</p>
 </section>
 <section id="section-1" class="slide level2 large-slide">
 <h2></h2>
@@ -251,18 +250,21 @@ Phil Henrickson, PhD
 </section>
 <section class="slide level2">
 
-<p>I will point you towards some things I think you should check out.</p>
+<p>I will point you towards some resources I think you should check out.</p>
 <div class="fragment">
 <p>I will recommend a basic technology stack.</p>
 </div>
 <div class="fragment">
-<p>I will list a few books to reference (and yes, some are textbooks).</p>
+<p>I will list a few books I think you should read (and yes, some are textbooks).</p>
 </div>
 <div class="fragment">
 <p>But, in the end, none of that is really important.</p>
 </div>
 <div class="fragment">
-<p>Because first, <strong>I want to tell you a story</strong>.</p>
+<p>The most important thing about getting into data science is a <strong>mentality</strong>.</p>
+</div>
+<div class="fragment">
+<p>So first, <strong>I want to tell you a story</strong>.</p>
 </div>
 </section></section>
 <section>
@@ -270,130 +272,317 @@ Phil Henrickson, PhD
 <h1>1) Charles Reep and the <br> Desolation of English Football</h1>
 <p>Or, the importance of research design</p>
 </section>
-<section id="section-6" class="slide level2" data-background-image="images/charles-reep.jpg" style="color: white;">
+<section class="slide level2">
+
+<p>I recently took a trip to England/Scotland/Ireland and attended a football (read: soccer) match.</p>
+<div class="fragment">
+<p>To prepare for this, I did what anyone would do: <span class="fragment">I read a 500 page book on the history of soccer tactics and formations.<sup>1</sup></span></p>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>I’m also trying to figure out the optimal formation to get my team out of Bronze in Rematch.</p></li></ol></aside></section>
+<section id="section-6" class="slide level2" data-background-image="images/inverting-the-pyramid.jpg" data-background-size="contain" style="color: white;">
+<h2></h2>
+</section>
+<section id="section-7" class="slide level2" data-background-image="images/london-inverting-the-pyramid.png" data-background-size="contain" style="color: white;">
 <h2></h2>
 </section>
 <section class="slide level2">
 
-<p>In 1950, Charles Reep was an RAF officer stationed in Yatesbury, England.</p>
-<div class="fragment">
-<p>An ardent football fan, he routinely attended nearby matches.</p>
-</div>
-<div class="fragment">
-<p>While attending a football match between Swindon and Bristol Rovers on March 18, he became fed up after watching attack after attack produce no goals. He decided to record every sequence in the second half.</p>
-</div>
-<div class="fragment">
-<p>Putting pen to paper, something jumped out at him:</p>
-</div>
+<p>This book contained the story of the first ever data-driven insight into the sport of soccer by a man named Charles Reep.</p>
 </section>
-<section class="slide level2">
-
-<p>He later developed a much more elaborate system for tracking passing sequences</p>
-</section>
-<section id="section-7" class="slide level2" data-background-image="images/charles-reep-notes.jpg" style="color: white;" data-background-size="contain">
-<h2></h2>
-</section>
-<section id="section-8" class="slide level2" data-background-image="images/royal-statistical-society.png" style="color: white;" data-background-size="contain">
+<section id="section-8" class="slide level2" data-background-image="images/charles-reep.jpg" style="color: white;">
 <h2></h2>
 </section>
 <section class="slide level2">
 
-<p>This was arguably the first-ever analytical insight into sport that led to a data-driven strategy.</p>
+<p>In 1950, Charles Reep was an RAF officer stationed in Bushy Park, England.</p>
 <div class="fragment">
+<p>A devoted football fan, he had been appointed director of football teams for the RAF and obsessively sought ways to improve his teams.</p>
+</div>
+<div class="fragment">
+<p>While attending a football match between Swindon and Bristol Rovers on March 18, 1950, he became fed up after watching attack after attack produce no goals.</p>
+</div>
+<div class="fragment">
+<p>Putting pen to paper, he decided to record all 147 attacking sequences by Swindon in the second half, which produced one goal in a 1-0 victory.</p>
+</div>
+<div class="fragment">
+<p>In other words, their rate of failure in attacking was &gt;99%.</p>
+</div>
+</section>
+<section class="slide level2">
+
+<!-- > Reep, extrapolating this, and assuming 280 attacks per game and an average of two goals scored, realized this equated to a failure rate of 99.29 percent, which meant that **an improvement of only 0.71 percent was necessary for a side to average three goals a game.**[^2]
+
+[^2]: *Inverting the Pyramid*. 2025. Jonathan Wilson. Page 166.
+
+. . . -->
+<p>Charles Reep sought to understand how to improve a soccer team’s ability to generate goals.</p>
+<div class="fragment">
+<p>He developed increasingly elaborate (handwritten) methods for recording and analyzing the events within games.</p>
+</div>
+</section>
+<section id="section-9" class="slide level2" data-background-image="images/charles-reep-notes.jpg" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-10" class="slide level2" data-background-image="images/charles-reep-notes-1966.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>Reep wanted to know <strong>when goals occur</strong>, so he looked at all of the sequences of passes that resulted in goals. After recording hundreds of games, he observed:</p>
+<div class="fragment">
+<blockquote>
+<p>Only two goals out of nine came from [sequences] which included more than three received passes.’</p>
+</blockquote>
+</div>
+<div class="fragment">
+<p>Stated another way, <strong>~80% of goals</strong> came from passing sequences with <strong>three passes or less</strong>.</p>
+</div>
+</section>
+<section id="section-11" class="slide level2" data-background-image="figures/goals_distribution_uniform.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>Reap’s data collection produced what was arguably the first-ever analytical insight into sport: goals tended to occur from shorter sequences of passes.</p>
+<div class="fragment">
+<p><strong>The key to scoring goals and winning matches</strong>, therefore, was simple: <span class="bg" style="--col: #FF6F40">greduce passes and possession time in favor of getting the ball downfield as quickly as possible</span>.</p>
+</div>
+</section>
+<section id="section-12" class="slide level2" data-background-image="images/royal-statistical-society.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>The teams he oversaw at the RAF implemented his strategies and saw tremendous success.</p>
+<div class="fragment">
+<p>Two smaller teams, Watford and Wimbledon, came to embrace his recommendations for “direct” football and managed to achieve a series of promotions.</p>
+</div>
+<div class="fragment">
+<p>Charles Reap later published his findings in the Royal Statistical Society.</p>
+</div>
+</section>
+<section id="section-13" class="slide level2" data-background-image="images/royal-statistical-society.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>So, why am I telling you about this?</p>
+<div class="fragment">
+<p>Charles Reep followed all of the steps I would expect you to follow in learning about data science:</p>
+<ul>
+<li>He collected data.<br>
+</li>
+<li>He found a pattern.<br>
+</li>
+<li>He used this pattern to recommend a strategy.<br>
+</li>
+<li>The teams that followed his strategy achieved success.</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
 <p>England, the originator of the world’s most popular sport, eventually embraced this approach. The long-ball became England’s football orthodox.</p>
-</div>
 <div class="fragment">
 <p>And it ultimately proved to be a disaster.</p>
 </div>
 <div class="fragment">
-<p>Because Reep’s insight was fundamentally wrong.</p>
+<p>Because Reep’s insight about soccer was fundamentally wrong.</p>
 </div>
 </section>
 <section class="slide level2">
 
-<p>Here’s the deal:</p>
-<p>Reep noted that <code>~80%</code> of goals came from passing sequences with <strong>three passes or less</strong>.</p>
+<p>Reep observed that <strong>~80%` of goals</strong> came from passing sequences with <strong>three passes or less</strong>..</p>
+<p>But he also observed that <strong>~90%` of all passing sequences</strong> had <strong>three passes or less</strong>.</p>
 <div class="fragment">
-<p>He also observed <code>~90%</code> of all passing sequences had <strong>three passes or less</strong>.</p>
+<p>Meaning, there are a lot of short passing sequences in soccer that <strong>don’t</strong> lead to goals.</p>
 </div>
-<div class="fragment">
-<p>If goals occured completely randomly with absolutely no relationship to the length of passing sequences, how many goals would we expect to occur to find in sequences of</p>
-</div>
-<div class="fragment">
-<p>But he said 80%. So, given his own premise, the data indicates that passes</p>
-</div>
+</section>
+<section id="section-14" class="slide level2" data-background-image="figures/goal_distribution_actual.png" style="color: white;" data-background-size="contain">
+<h2></h2>
 </section>
 <section class="slide level2">
 
-</section>
-<section class="slide level2">
+<p>He should have been examining <strong>all passing sequences</strong> and asking, when do goals occur?</p>
+<!-- ---
 
-<p>Reep wanted to know when goals occur, so he looked at all of the sequences that resulted in goals. He found that goals typically occured among shorter passing sequences.</p>
-<div class="fragment">
-<p>But there are a lot of short passing sequences in soccer that <em>don’t</em> lead to goals.</p>
-</div>
-<div class="fragment">
-<p>He should have been examining <em>all</em> passing sequences and asking, when do goals occur?</p>
-</div>
-</section>
-<section class="slide level2">
+In other words, Reep solved for this:
 
-<p>In other words, Reep solved for this:</p>
-<div class="fragment">
-<p><span class="math display">\[
+. . .
+
+$$
 max_k \Pr(\text{Passes} = k \mid \text{Goal}) \text{ for all sequences of $k$ passes} \newline
 \textnormal{ie, what is the most common number of passes when a goal has been scored?}
-\]</span></p>
-</div>
-<div class="fragment">
-<p>instead of this:</p>
-<p><span class="math display">\[
+$$
+
+. . .
+
+instead of this:
+
+$$
 \Pr(\text{Goal} \mid \text{Passes} = k) \newline
 \textnormal{ie, what is the probability of a goal among all sequences with $k$ passes?}
-\]</span></p>
-<p>ie, what is the probability of a goal among all sequences with <span class="math inline">\(k\)</span> passes?</p>
-<p>Reep wanted to know when goals occur, so he looked at all of the sequences that resulted in goals. He found that goals typically occured among shorter passing sequences.</p>
-</div>
-<div class="fragment">
-<p>But there are a lot of short passing sequences in soccer that <em>don’t</em> lead to goals.</p>
-</div>
-<div class="fragment">
-<p>He should have been examining <em>all</em> passing sequences and asking, when do goals occur?</p>
-<p><span class="math display">\[ Pr(\text{Goal}_{\text{Scored}})\text{ | Passes} \]</span></p>
-</div>
-<div class="fragment">
-<p>He would have found, by normalizing the data, that passing tends to lead to more goals.</p>
-<p>Why am I telling you this story?</p>
-</div>
-<div class="fragment">
-<p>Because I just spend two weeks in England/Scotland/Ireland, so there.</p>
-</div>
-<div class="fragment">
-<p>Because the single most important thing to understand about data science a mindset:</p>
-</div>
-<div class="fragment">
-<p>How could I prove myself wrong?</p>
-</div>
+$$
+
+--- -->
+<p>He would have noticed that goals are more likely to come from longer sequences of passes.</p>
+</section>
+<section id="section-15" class="slide level2" data-background-image="figures/hughes-2005.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-16" class="slide level2" data-background-image="figures/hughes-2005-figure.png" style="color: white;" data-background-size="contain">
+<h2></h2>
 </section>
 <section class="slide level2">
 
-<p>At</p>
+<p>So what happened? Charles Hughes embraced Reap’s methods and ultimately became England’s director of football in 1983.</p>
+<p>His book, <em>The Winning Formula</em>, advocated against passing and possession in favor of booting the ball upfield and shooting at the first opportunity.</p>
+<div class="fragment">
+<p>These policies become the orthodox of English football and set the direction of English football development for over a decade.</p>
+</div>
+</section>
+<section id="section-17" class="slide level2" data-background-image="images/charles-hughes.jpg" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-18" class="slide level2" data-background-image="images/the-winning-formula-1.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-19" class="slide level2" data-background-image="images/the-winning-formula-british-aerospace.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>Hughes was removed from his job in 1994 when England failed to qualify for the World Cup.</p>
+<div class="fragment">
+<p>England still has not won a major international tournament since 1966.</p>
+</div>
+</section>
+<section id="section-20" class="slide level2" data-background-image="images/chargles-hughes-obituary.png" style="color: white;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<blockquote>
+<p>It is, frankly, horrifying that a philosophy founded on such basic misinterpretation of figures could have been allowed to become a cornerstone of English coaching. <strong>Anti-intellectualism is one thing, but faith in wrong-headed pseudo intellectualism is far worse.</strong><sup>1</sup></p>
+</blockquote>
+<p>So, why am I telling you about this?</p>
+<div class="fragment">
 <p>At this point, you might very reasonably be wondering:</p>
+</div>
 <div class="fragment">
 <p>How does any of this apply to to my job in Network/Security?</p>
 </div>
-</section></section>
+<div class="fragment">
+<p>What if I was to tell you that the same methods used to study soccer games are being used in network/security?</p>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn2"><p><em>Inverting the Pyramid</em>. 2025. Jonathan Wilson. Page 168.</p></li></ol></aside></section></section>
+<section>
 <section id="but-how-does-any-of-this-apply-to-your-job-in-networksecurity" class="title-slide slide level1 center">
 <h1>2) But How Does Any of This <br> Apply to Your Job in Network/Security?</h1>
-<div class="fragment">
-<p>Hold on to your butts.</p>
-</div>
-</section>
 
+</section>
+<section class="slide level2">
+
+<p>You can throw a dart out the window and hit a vendor that is talking about their newfound capabilities with <strong>AI</strong>.</p>
+</section>
+<section id="section-21" class="slide level2" data-background-image="images/talk/page_31.png" style="color: black;" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-22" class="slide level2" data-background-image="images/talk/page_32.png" style="color: black;" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-23" class="slide level2" data-background-image="images/talk/page_34.png" style="color: black;" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-24" class="slide level2" data-background-image="images/talk/page_35.png" style="color: black;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>What if I was to tell you that the same methods used to study soccer games are the same techniques being labelled as AI?</p>
+</section>
+<section class="slide level2">
+
+<p>What</p>
+</section>
+<section id="section-25" class="slide level2" data-background-image="images/talk/page_58.png" style="color: black;" data-background-size="contain">
+<h2></h2>
+</section>
+<section class="slide level2">
+
+<p>Hold on to your butts.</p>
+</section></section>
+<section>
 <section id="okay-so-what-should-i-do" class="title-slide slide level1 center">
 <h1>3) Okay, So What Should I Do?</h1>
-
+<p>Alright, I promised that I was going to link you to some resources.</p>
 </section>
+<section id="phils-100-essential-path-to-learning-about-data-science-that-definitely-wont-change-between-now-and-when-he-presents-this" class="slide level2">
+<h2>Phil’s 100% Essential Path to Learning About Data Science That Definitely Won’t Change Between Now and When He Presents This</h2>
+</section>
+<section id="phils-100-essential-path-to-learning-about-data-science" class="slide level2">
+<h2>Phil’s 100% Essential Path to Learning About Data Science</h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+0.5) Find <strong>real data</strong> for that problem.<br>
+</li>
+<li>Read <strong>the introductions</strong> from a couple of textbooks.<br>
+1.5) Then <strong>skip to sections</strong> that seem to <strong>match your problem</strong>.<br>
+</li>
+<li>Start learning a coding language in order to ask questions <strong>of your data</strong>.<br>
+2.5) Find an IDE that you enjoy having open on your computer.</li>
+<li>Become familiar with the <strong>data science workflow</strong>.<br>
+</li>
+<li>Try the <strong>simplest possible method you can find</strong> for your problem.</li>
+<li>Start your journey into learning <code>Git</code> now, rather than later.</li>
+<li>Have you figured out your problem? What do you have right/wrong? What could be better?</li>
+</ol>
+</section>
+<section id="phils-100-essential-path-to-learning-about-data-science-1" class="slide level2">
+<h2>Phil’s 100% Essential Path to Learning About Data Science</h2>
+<ol start="0" type="1">
+<li>Find a problem you <strong>intrinsically care about</strong>.<br>
+0.5) Find <strong>real data</strong> for that problem.<br>
+</li>
+<li>Read <strong>the introductions</strong> from a couple of textbooks.<br>
+1.5) Then <strong>skip to sections</strong> that seem to <strong>match your problem</strong>.<br>
+</li>
+<li>Start learning a coding language in order to ask questions <strong>of your data</strong>.<br>
+2.5) Find an IDE that you enjoy having open on your computer.</li>
+<li>Become familiar with the <strong>data science workflow</strong>.<br>
+</li>
+<li>Try the <strong>simplest possible method you can find</strong> for your problem.</li>
+<li>Start your journey into learning <code>Git</code> now, rather than later.</li>
+<li>Have you figured out your problem? What do you have right/wrong?</li>
+<li>What could be better?</li>
+</ol>
+</section>
+<section class="slide level2">
+
+<ol start="8" type="1">
+<li><strong>Read</strong> these books to distract your brain for a minute.</li>
+<li><strong>Read</strong> what other people have done for problems like yours.</li>
+<li><strong>Read</strong> about specific methodological areas you’re starting to find interesting or useful.</li>
+<li><strong>Read</strong> the documentation for the open-source packages that everyone uses but nobody ever bothers to read.</li>
+<li>???</li>
+<li>Profit</li>
+</ol>
+</section>
+<section class="slide level2">
+
+<p>Look it pains me to say this, but <img data-src="https://www.python.org/static/community_logos/python-logo.png" width="200"></p>
+<p>I am writing some text, and here is the Python logo inline <img data-src="https://www.python.org/static/community_logos/python-logo.png" width="20" alt="Python"> continuing the paragraph right after it.</p>
+<p>For my own work setup, I use <code>VSCode</code> with extensions for interacting with data</p>
+<p>There is no one-simple-trick; there is no tool that you can buy and start solving all of your problems.</p>
+<div class="fragment">
+<p>The value in (data) science usually doesn’t come from algorithms, tools, platforms.</p>
+</div>
+<div class="fragment">
+<p>The value in (data) science is usually from the <span class="fg" style="--col: #75BAFF">creativity/dedication/passion</span> of asking questions and being willing to go to the ends of the earth in search of the answer.</p>
+
+</div>
+</section></section>
+
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">

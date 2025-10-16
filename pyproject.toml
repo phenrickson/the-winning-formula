@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "matplotlib>=3.10.7",
+    "pdf2image>=1.17.0",
     "plotnine>=0.15.0",
     "polars>=1.34.0",
     "scikit-learn>=1.7.2",
